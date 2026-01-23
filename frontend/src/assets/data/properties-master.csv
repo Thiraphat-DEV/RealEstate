@@ -1,0 +1,301 @@
+id,title,address,price,bedrooms,bathrooms,rooms,location
+1,Luxury Condominium at The Grand,897 Sukhumvit Road, Sukhumvit, Bangkok 10110, Thailand,20794492,1,1,5,Sukhumvit, Bangkok, Thailand
+2,Modern Apartment at Sky Tower,590 Silom Road, Sathorn, Bangkok 10120, Thailand,19275839,2,2,7,Sathorn, Bangkok, Thailand
+3,Studio Unit at Riverside Residences,229 Sathorn Road, Silom, Bangkok 10500, Thailand,21777995,3,4,8,Silom, Bangkok, Thailand
+4,Penthouse Suite at Central Park,76 Ratchadamri Road, Phrom Phong, Bangkok 10110, Thailand,11880811,4,5,10,Phrom Phong, Bangkok, Thailand
+5,Executive Condo at Ocean View,614 Wireless Road, Thong Lo, Bangkok 10110, Thailand,12723017,1,1,3,Thong Lo, Bangkok, Thailand
+6,Waterfront Residence at Metro Heights,90 Ploenchit Road, Ekkamai, Bangkok 10110, Thailand,12726941,2,2,6,Ekkamai, Bangkok, Thailand
+7,Sky Villa at Garden Plaza,574 Rama IV Road, Asok, Bangkok 10110, Thailand,9904851,3,4,10,Asok, Bangkok, Thailand
+8,Garden View Unit at Crystal Tower,337 Charoen Krung Road, Chidlom, Bangkok 10330, Thailand,15284790,4,5,10,Chidlom, Bangkok, Thailand
+9,Townhouse at Sunset Residences,941 Thanon Phra Athit, Lumpini, Bangkok 10330, Thailand,17767635,1,1,4,Lumpini, Bangkok, Thailand
+10,Luxury Villa at Prime Location,188 Soi Thong Lo, Riverside, Bangkok 10500, Thailand,12933135,2,2,5,Riverside, Bangkok, Thailand
+11,Luxury Condominium at Royal Residence,114 Main Street, Old City, Chiang Mai 50200, Thailand,8061433,3,4,10,Old City, Chiang Mai, Thailand
+12,Modern Apartment at Elite Tower,868 Beach Road, Nimman, Chiang Mai 50200, Thailand,5348141,4,5,12,Nimman, Chiang Mai, Thailand
+13,Studio Unit at Paradise Condo,340 Park Avenue, Airport, Chiang Mai 50100, Thailand,9507935,1,1,4,Airport, Chiang Mai, Thailand
+14,Penthouse Suite at Golden Heights,378 Riverside Drive, Patong, Phuket 83150, Thailand,9192709,2,2,7,Patong, Phuket, Thailand
+15,Executive Condo at Platinum Plaza,884 Central Avenue, Kata, Phuket 83100, Thailand,5355144,3,4,9,Kata, Phuket, Thailand
+16,Waterfront Residence at The Grand,478 Sukhumvit Road, Karon, Phuket 83100, Thailand,6041550,4,5,12,Karon, Phuket, Thailand
+17,Sky Villa at Sky Tower,657 Silom Road, Bang Tao, Phuket 83110, Thailand,7308372,1,1,5,Bang Tao, Phuket, Thailand
+18,Garden View Unit at Riverside Residences,182 Sathorn Road, Kamala, Phuket 83120, Thailand,6146716,2,2,5,Kamala, Phuket, Thailand
+19,Townhouse at Central Park,284 Ratchadamri Road, North Pattaya, Chonburi 20150, Thailand,8068705,3,4,9,North Pattaya, Chonburi, Thailand
+20,Luxury Villa at Ocean View,215 Wireless Road, Central Pattaya, Chonburi 20150, Thailand,9943207,4,5,12,Central Pattaya, Chonburi, Thailand
+21,Luxury Condominium at Metro Heights,954 Ploenchit Road, Jomtien, Chonburi 20260, Thailand,6492288,1,1,3,Jomtien, Chonburi, Thailand
+22,Modern Apartment at Garden Plaza,405 Rama IV Road, Naklua, Chonburi 20150, Thailand,9671371,2,2,6,Naklua, Chonburi, Thailand
+23,Studio Unit at Crystal Tower,829 Charoen Krung Road, Beach Road, Prachuap Khiri Khan 77110, Thailand,6020377,3,4,10,Beach Road, Prachuap Khiri Khan, Thailand
+24,Penthouse Suite at Sunset Residences,153 Thanon Phra Athit, Market Village, Prachuap Khiri Khan 77110, Thailand,7694578,4,5,11,Market Village, Prachuap Khiri Khan, Thailand
+25,Executive Condo at Prime Location,323 Soi Thong Lo, Black Mountain, Prachuap Khiri Khan 77110, Thailand,7092678,1,1,5,Black Mountain, Prachuap Khiri Khan, Thailand
+26,Waterfront Residence at Royal Residence,78 Main Street, Bang Na, Bangkok 10260, Thailand,8695831,2,2,6,Bang Na, Bangkok, Thailand
+27,Sky Villa at Elite Tower,105 Beach Road, On Nut, Bangkok 10250, Thailand,13258545,3,4,9,On Nut, Bangkok, Thailand
+28,Garden View Unit at Paradise Condo,802 Park Avenue, Bearing, Bangkok 10110, Thailand,12918854,4,5,11,Bearing, Bangkok, Thailand
+29,Townhouse at Golden Heights,494 Riverside Drive, Udom Suk, Bangkok 10260, Thailand,12388678,1,1,5,Udom Suk, Bangkok, Thailand
+30,Luxury Villa at Platinum Plaza,417 Central Avenue, Punnawithi, Bangkok 10110, Thailand,14611100,2,2,7,Punnawithi, Bangkok, Thailand
+31,Luxury Condominium at The Grand,598 Sukhumvit Road, Orchard, Singapore 238801, Singapore,1290809,3,4,9,Orchard, Singapore, Singapore
+32,Modern Apartment at Sky Tower,445 Silom Road, Marina Bay, Singapore 018956, Singapore,1857156,4,5,11,Marina Bay, Singapore, Singapore
+33,Studio Unit at Riverside Residences,902 Sathorn Road, Sentosa, Singapore 099538, Singapore,1041398,1,1,5,Sentosa, Singapore, Singapore
+34,Penthouse Suite at Central Park,923 Ratchadamri Road, Clarke Quay, Singapore 059817, Singapore,831690,2,2,5,Clarke Quay, Singapore, Singapore
+35,Executive Condo at Ocean View,168 Wireless Road, Robertson Quay, Singapore 238801, Singapore,868026,3,4,9,Robertson Quay, Singapore, Singapore
+36,Waterfront Residence at Metro Heights,966 Ploenchit Road, River Valley, Singapore 238801, Singapore,1299585,4,5,10,River Valley, Singapore, Singapore
+37,Sky Villa at Garden Plaza,399 Rama IV Road, Newton, Singapore 307683, Singapore,1313008,1,1,4,Newton, Singapore, Singapore
+38,Garden View Unit at Crystal Tower,834 Charoen Krung Road, Novena, Singapore 307683, Singapore,828033,2,2,7,Novena, Singapore, Singapore
+39,Townhouse at Sunset Residences,699 Thanon Phra Athit, Harbourfront, Singapore 099538, Singapore,1023591,3,4,9,Harbourfront, Singapore, Singapore
+40,Luxury Villa at Prime Location,520 Soi Thong Lo, East Coast, Singapore 428795, Singapore,1202548,4,5,11,East Coast, Singapore, Singapore
+41,Luxury Condominium at Royal Residence,981 Main Street, KLCC, Kuala Lumpur 50088, Malaysia,958469,1,1,5,KLCC, Kuala Lumpur, Malaysia
+42,Modern Apartment at Elite Tower,914 Beach Road, Bukit Bintang, Kuala Lumpur 50250, Malaysia,1448734,2,2,6,Bukit Bintang, Kuala Lumpur, Malaysia
+43,Studio Unit at Paradise Condo,471 Park Avenue, Mont Kiara, Kuala Lumpur 50480, Malaysia,1491538,3,4,8,Mont Kiara, Kuala Lumpur, Malaysia
+44,Penthouse Suite at Golden Heights,939 Riverside Drive, Bangsar, Kuala Lumpur 59000, Malaysia,959636,4,5,11,Bangsar, Kuala Lumpur, Malaysia
+45,Executive Condo at Platinum Plaza,978 Central Avenue, KL Sentral, Kuala Lumpur 50470, Malaysia,1402778,1,1,4,KL Sentral, Kuala Lumpur, Malaysia
+46,Waterfront Residence at The Grand,301 Sukhumvit Road, Georgetown, Penang 10200, Malaysia,1088148,2,2,5,Georgetown, Penang, Malaysia
+47,Sky Villa at Sky Tower,352 Silom Road, Batu Ferringhi, Penang 11100, Malaysia,947041,3,4,8,Batu Ferringhi, Penang, Malaysia
+48,Garden View Unit at Riverside Residences,886 Sathorn Road, Tanjung Bungah, Penang 11200, Malaysia,1193768,4,5,10,Tanjung Bungah, Penang, Malaysia
+49,Townhouse at Central Park,919 Ratchadamri Road, Gurney Drive, Penang 10250, Malaysia,1709157,1,1,5,Gurney Drive, Penang, Malaysia
+50,Luxury Villa at Ocean View,516 Wireless Road, Bayan Lepas, Penang 11900, Malaysia,1331017,2,2,6,Bayan Lepas, Penang, Malaysia
+51,Luxury Condominium at Metro Heights,40 Ploenchit Road, Central Jakarta, Jakarta 10110, Indonesia,5537899,3,4,9,Central Jakarta, Jakarta, Indonesia
+52,Modern Apartment at Garden Plaza,444 Rama IV Road, South Jakarta, Jakarta 12190, Indonesia,8960314,4,5,11,South Jakarta, Jakarta, Indonesia
+53,Studio Unit at Crystal Tower,915 Charoen Krung Road, North Jakarta, Jakarta 14450, Indonesia,6421255,1,1,4,North Jakarta, Jakarta, Indonesia
+54,Penthouse Suite at Sunset Residences,293 Thanon Phra Athit, Sanur, Denpasar 80228, Indonesia,8764693,2,2,6,Sanur, Denpasar, Indonesia
+55,Executive Condo at Prime Location,543 Soi Thong Lo, Seminyak, Denpasar 80361, Indonesia,6177382,3,4,8,Seminyak, Denpasar, Indonesia
+56,Waterfront Residence at Royal Residence,378 Main Street, Ubud, Denpasar 80571, Indonesia,9822527,4,5,11,Ubud, Denpasar, Indonesia
+57,Sky Villa at Elite Tower,26 Beach Road, Canggu, Denpasar 80351, Indonesia,7616307,1,1,4,Canggu, Denpasar, Indonesia
+58,Garden View Unit at Paradise Condo,101 Park Avenue, Nusa Dua, Denpasar 80363, Indonesia,7681618,2,2,6,Nusa Dua, Denpasar, Indonesia
+59,Townhouse at Golden Heights,462 Riverside Drive, Makati, Manila 1200, Philippines,8613307,3,4,10,Makati, Manila, Philippines
+60,Luxury Villa at Platinum Plaza,114 Central Avenue, BGC, Manila 1630, Philippines,5276862,4,5,11,BGC, Manila, Philippines
+61,Luxury Condominium at The Grand,167 Sukhumvit Road, Ortigas, Manila 1605, Philippines,9754838,1,1,3,Ortigas, Manila, Philippines
+62,Modern Apartment at Sky Tower,631 Silom Road, Quezon City, Manila 1100, Philippines,6758530,2,2,5,Quezon City, Manila, Philippines
+63,Studio Unit at Riverside Residences,493 Sathorn Road, Alabang, Manila 1780, Philippines,6911859,3,4,8,Alabang, Manila, Philippines
+64,Penthouse Suite at Central Park,562 Ratchadamri Road, Cebu City, Cebu 6000, Philippines,6294333,4,5,11,Cebu City, Cebu, Philippines
+65,Executive Condo at Ocean View,144 Wireless Road, IT Park, Cebu 6000, Philippines,5213000,1,1,3,IT Park, Cebu, Philippines
+66,Waterfront Residence at Metro Heights,690 Ploenchit Road, Ayala Center, Cebu 6000, Philippines,6440377,2,2,6,Ayala Center, Cebu, Philippines
+67,Sky Villa at Garden Plaza,103 Rama IV Road, District 1, Ho Chi Minh City 700000, Vietnam,9419287,3,4,8,District 1, Ho Chi Minh City, Vietnam
+68,Garden View Unit at Crystal Tower,896 Charoen Krung Road, District 2, Ho Chi Minh City 700000, Vietnam,9987275,4,5,11,District 2, Ho Chi Minh City, Vietnam
+69,Townhouse at Sunset Residences,976 Thanon Phra Athit, District 3, Ho Chi Minh City 700000, Vietnam,9288558,1,1,5,District 3, Ho Chi Minh City, Vietnam
+70,Luxury Villa at Prime Location,668 Soi Thong Lo, District 7, Ho Chi Minh City 700000, Vietnam,6341731,2,2,7,District 7, Ho Chi Minh City, Vietnam
+71,Luxury Condominium at Royal Residence,654 Main Street, Hoan Kiem, Hanoi 100000, Vietnam,6034122,3,4,10,Hoan Kiem, Hanoi, Vietnam
+72,Modern Apartment at Elite Tower,92 Beach Road, Ba Dinh, Hanoi 100000, Vietnam,6508026,4,5,12,Ba Dinh, Hanoi, Vietnam
+73,Studio Unit at Paradise Condo,208 Park Avenue, Tay Ho, Hanoi 100000, Vietnam,6724075,1,1,3,Tay Ho, Hanoi, Vietnam
+74,Penthouse Suite at Golden Heights,365 Riverside Drive, Cau Giay, Hanoi 100000, Vietnam,8364772,2,2,6,Cau Giay, Hanoi, Vietnam
+75,Executive Condo at Platinum Plaza,451 Central Avenue, My Khe, Da Nang 550000, Vietnam,8815878,3,4,8,My Khe, Da Nang, Vietnam
+76,Waterfront Residence at The Grand,270 Sukhumvit Road, Ngu Hanh Son, Da Nang 550000, Vietnam,6037335,4,5,11,Ngu Hanh Son, Da Nang, Vietnam
+77,Sky Villa at Sky Tower,250 Silom Road, Hai Chau, Da Nang 550000, Vietnam,8686806,1,1,4,Hai Chau, Da Nang, Vietnam
+78,Garden View Unit at Riverside Residences,693 Sathorn Road, Riverside, Phnom Penh 12000, Cambodia,7434340,2,2,7,Riverside, Phnom Penh, Cambodia
+79,Townhouse at Central Park,650 Ratchadamri Road, BKK1, Phnom Penh 12000, Cambodia,7206103,3,4,9,BKK1, Phnom Penh, Cambodia
+80,Luxury Villa at Ocean View,854 Wireless Road, Toul Kork, Phnom Penh 12150, Cambodia,5467285,4,5,10,Toul Kork, Phnom Penh, Cambodia
+81,Luxury Condominium at Metro Heights,760 Ploenchit Road, Old Market, Siem Reap 17252, Cambodia,5080924,1,1,3,Old Market, Siem Reap, Cambodia
+82,Modern Apartment at Garden Plaza,331 Rama IV Road, Airport Road, Siem Reap 17252, Cambodia,9075413,2,2,6,Airport Road, Siem Reap, Cambodia
+83,Studio Unit at Crystal Tower,993 Charoen Krung Road, Downtown, Yangon 11181, Myanmar,7796900,3,4,8,Downtown, Yangon, Myanmar
+84,Penthouse Suite at Sunset Residences,864 Thanon Phra Athit, Bahan, Yangon 11181, Myanmar,9180464,4,5,11,Bahan, Yangon, Myanmar
+85,Executive Condo at Prime Location,442 Soi Thong Lo, Mayangone, Yangon 11061, Myanmar,7297026,1,1,4,Mayangone, Yangon, Myanmar
+86,Waterfront Residence at Royal Residence,252 Main Street, Chanthabouly, Vientiane 01000, Laos,7522350,2,2,6,Chanthabouly, Vientiane, Laos
+87,Sky Villa at Elite Tower,147 Beach Road, Sisattanak, Vientiane 01000, Laos,5664500,3,4,8,Sisattanak, Vientiane, Laos
+88,Garden View Unit at Paradise Condo,775 Park Avenue, Old Town, Luang Prabang 06000, Laos,7176270,4,5,11,Old Town, Luang Prabang, Laos
+89,Townhouse at Golden Heights,374 Riverside Drive, Shibuya, Tokyo 150-0001, Japan,11535148,1,1,5,Shibuya, Tokyo, Japan
+90,Luxury Villa at Platinum Plaza,885 Central Avenue, Shinjuku, Tokyo 160-0022, Japan,10294934,2,2,7,Shinjuku, Tokyo, Japan
+91,Luxury Condominium at The Grand,66 Sukhumvit Road, Ginza, Tokyo 104-0061, Japan,14846423,3,4,8,Ginza, Tokyo, Japan
+92,Modern Apartment at Sky Tower,445 Silom Road, Roppongi, Tokyo 106-0032, Japan,16505905,4,5,11,Roppongi, Tokyo, Japan
+93,Studio Unit at Riverside Residences,989 Sathorn Road, Omotesando, Tokyo 150-0001, Japan,15040421,1,1,5,Omotesando, Tokyo, Japan
+94,Penthouse Suite at Central Park,238 Ratchadamri Road, Namba, Osaka 542-0076, Japan,15677588,2,2,6,Namba, Osaka, Japan
+95,Executive Condo at Ocean View,597 Wireless Road, Umeda, Osaka 530-0001, Japan,17682973,3,4,9,Umeda, Osaka, Japan
+96,Waterfront Residence at Metro Heights,450 Ploenchit Road, Shinsaibashi, Osaka 542-0085, Japan,11267910,4,5,11,Shinsaibashi, Osaka, Japan
+97,Sky Villa at Garden Plaza,800 Rama IV Road, Gangnam, Seoul 06000, South Korea,12656798,1,1,3,Gangnam, Seoul, South Korea
+98,Garden View Unit at Crystal Tower,328 Charoen Krung Road, Itaewon, Seoul 04348, South Korea,9206398,2,2,7,Itaewon, Seoul, South Korea
+99,Townhouse at Sunset Residences,243 Thanon Phra Athit, Myeongdong, Seoul 04536, South Korea,7317156,3,4,10,Myeongdong, Seoul, South Korea
+100,Luxury Villa at Prime Location,838 Soi Thong Lo, Hongdae, Seoul 04066, South Korea,5237007,4,5,10,Hongdae, Seoul, South Korea
+101,Luxury Condominium at Royal Residence,149 Main Street, Sukhumvit, Bangkok 10110, Thailand,16412850,1,1,4,Sukhumvit, Bangkok, Thailand
+102,Modern Apartment at Elite Tower,825 Beach Road, Sathorn, Bangkok 10120, Thailand,22835342,2,2,5,Sathorn, Bangkok, Thailand
+103,Studio Unit at Paradise Condo,474 Park Avenue, Silom, Bangkok 10500, Thailand,20017005,3,4,9,Silom, Bangkok, Thailand
+104,Penthouse Suite at Golden Heights,4 Riverside Drive, Phrom Phong, Bangkok 10110, Thailand,13905821,4,5,11,Phrom Phong, Bangkok, Thailand
+105,Executive Condo at Platinum Plaza,799 Central Avenue, Thong Lo, Bangkok 10110, Thailand,10648857,1,1,3,Thong Lo, Bangkok, Thailand
+106,Waterfront Residence at The Grand,297 Sukhumvit Road, Ekkamai, Bangkok 10110, Thailand,9221642,2,2,6,Ekkamai, Bangkok, Thailand
+107,Sky Villa at Sky Tower,144 Silom Road, Asok, Bangkok 10110, Thailand,9382279,3,4,10,Asok, Bangkok, Thailand
+108,Garden View Unit at Riverside Residences,559 Sathorn Road, Chidlom, Bangkok 10330, Thailand,24755047,4,5,10,Chidlom, Bangkok, Thailand
+109,Townhouse at Central Park,344 Ratchadamri Road, Lumpini, Bangkok 10330, Thailand,24008739,1,1,3,Lumpini, Bangkok, Thailand
+110,Luxury Villa at Ocean View,314 Wireless Road, Riverside, Bangkok 10500, Thailand,11442659,2,2,6,Riverside, Bangkok, Thailand
+111,Luxury Condominium at Metro Heights,589 Ploenchit Road, Old City, Chiang Mai 50200, Thailand,7132176,3,4,9,Old City, Chiang Mai, Thailand
+112,Modern Apartment at Garden Plaza,855 Rama IV Road, Nimman, Chiang Mai 50200, Thailand,9443069,4,5,12,Nimman, Chiang Mai, Thailand
+113,Studio Unit at Crystal Tower,708 Charoen Krung Road, Airport, Chiang Mai 50100, Thailand,9192107,1,1,5,Airport, Chiang Mai, Thailand
+114,Penthouse Suite at Sunset Residences,679 Thanon Phra Athit, Patong, Phuket 83150, Thailand,7691487,2,2,5,Patong, Phuket, Thailand
+115,Executive Condo at Prime Location,700 Soi Thong Lo, Kata, Phuket 83100, Thailand,8736023,3,4,9,Kata, Phuket, Thailand
+116,Waterfront Residence at Royal Residence,500 Main Street, Karon, Phuket 83100, Thailand,5081509,4,5,12,Karon, Phuket, Thailand
+117,Sky Villa at Elite Tower,129 Beach Road, Bang Tao, Phuket 83110, Thailand,6335785,1,1,3,Bang Tao, Phuket, Thailand
+118,Garden View Unit at Paradise Condo,161 Park Avenue, Kamala, Phuket 83120, Thailand,8702203,2,2,7,Kamala, Phuket, Thailand
+119,Townhouse at Golden Heights,570 Riverside Drive, North Pattaya, Chonburi 20150, Thailand,9794222,3,4,10,North Pattaya, Chonburi, Thailand
+120,Luxury Villa at Platinum Plaza,447 Central Avenue, Central Pattaya, Chonburi 20150, Thailand,5820574,4,5,11,Central Pattaya, Chonburi, Thailand
+121,Luxury Condominium at The Grand,679 Sukhumvit Road, Jomtien, Chonburi 20260, Thailand,9911506,1,1,5,Jomtien, Chonburi, Thailand
+122,Modern Apartment at Sky Tower,235 Silom Road, Naklua, Chonburi 20150, Thailand,6726201,2,2,5,Naklua, Chonburi, Thailand
+123,Studio Unit at Riverside Residences,422 Sathorn Road, Beach Road, Prachuap Khiri Khan 77110, Thailand,7753654,3,4,8,Beach Road, Prachuap Khiri Khan, Thailand
+124,Penthouse Suite at Central Park,732 Ratchadamri Road, Market Village, Prachuap Khiri Khan 77110, Thailand,6258678,4,5,11,Market Village, Prachuap Khiri Khan, Thailand
+125,Executive Condo at Ocean View,637 Wireless Road, Black Mountain, Prachuap Khiri Khan 77110, Thailand,7437739,1,1,5,Black Mountain, Prachuap Khiri Khan, Thailand
+126,Waterfront Residence at Metro Heights,505 Ploenchit Road, Bang Na, Bangkok 10260, Thailand,12896687,2,2,6,Bang Na, Bangkok, Thailand
+127,Sky Villa at Garden Plaza,686 Rama IV Road, On Nut, Bangkok 10250, Thailand,12289004,3,4,9,On Nut, Bangkok, Thailand
+128,Garden View Unit at Crystal Tower,805 Charoen Krung Road, Bearing, Bangkok 10110, Thailand,11157391,4,5,10,Bearing, Bangkok, Thailand
+129,Townhouse at Sunset Residences,598 Thanon Phra Athit, Udom Suk, Bangkok 10260, Thailand,11058261,1,1,3,Udom Suk, Bangkok, Thailand
+130,Luxury Villa at Prime Location,92 Soi Thong Lo, Punnawithi, Bangkok 10110, Thailand,13770795,2,2,6,Punnawithi, Bangkok, Thailand
+131,Luxury Condominium at Royal Residence,760 Main Street, Orchard, Singapore 238801, Singapore,1371610,3,4,9,Orchard, Singapore, Singapore
+132,Modern Apartment at Elite Tower,490 Beach Road, Marina Bay, Singapore 018956, Singapore,1484190,4,5,10,Marina Bay, Singapore, Singapore
+133,Studio Unit at Paradise Condo,758 Park Avenue, Sentosa, Singapore 099538, Singapore,1025381,1,1,4,Sentosa, Singapore, Singapore
+134,Penthouse Suite at Golden Heights,496 Riverside Drive, Clarke Quay, Singapore 059817, Singapore,957137,2,2,5,Clarke Quay, Singapore, Singapore
+135,Executive Condo at Platinum Plaza,227 Central Avenue, Robertson Quay, Singapore 238801, Singapore,1143534,3,4,9,Robertson Quay, Singapore, Singapore
+136,Waterfront Residence at The Grand,34 Sukhumvit Road, River Valley, Singapore 238801, Singapore,1432559,4,5,12,River Valley, Singapore, Singapore
+137,Sky Villa at Sky Tower,604 Silom Road, Newton, Singapore 307683, Singapore,1859726,1,1,3,Newton, Singapore, Singapore
+138,Garden View Unit at Riverside Residences,987 Sathorn Road, Novena, Singapore 307683, Singapore,1555387,2,2,5,Novena, Singapore, Singapore
+139,Townhouse at Central Park,820 Ratchadamri Road, Harbourfront, Singapore 099538, Singapore,836838,3,4,8,Harbourfront, Singapore, Singapore
+140,Luxury Villa at Ocean View,590 Wireless Road, East Coast, Singapore 428795, Singapore,997633,4,5,11,East Coast, Singapore, Singapore
+141,Luxury Condominium at Metro Heights,708 Ploenchit Road, KLCC, Kuala Lumpur 50088, Malaysia,1066599,1,1,5,KLCC, Kuala Lumpur, Malaysia
+142,Modern Apartment at Garden Plaza,189 Rama IV Road, Bukit Bintang, Kuala Lumpur 50250, Malaysia,1170772,2,2,7,Bukit Bintang, Kuala Lumpur, Malaysia
+143,Studio Unit at Crystal Tower,366 Charoen Krung Road, Mont Kiara, Kuala Lumpur 50480, Malaysia,1602476,3,4,10,Mont Kiara, Kuala Lumpur, Malaysia
+144,Penthouse Suite at Sunset Residences,754 Thanon Phra Athit, Bangsar, Kuala Lumpur 59000, Malaysia,1960167,4,5,10,Bangsar, Kuala Lumpur, Malaysia
+145,Executive Condo at Prime Location,998 Soi Thong Lo, KL Sentral, Kuala Lumpur 50470, Malaysia,1546662,1,1,5,KL Sentral, Kuala Lumpur, Malaysia
+146,Waterfront Residence at Royal Residence,529 Main Street, Georgetown, Penang 10200, Malaysia,839230,2,2,5,Georgetown, Penang, Malaysia
+147,Sky Villa at Elite Tower,866 Beach Road, Batu Ferringhi, Penang 11100, Malaysia,1164407,3,4,8,Batu Ferringhi, Penang, Malaysia
+148,Garden View Unit at Paradise Condo,240 Park Avenue, Tanjung Bungah, Penang 11200, Malaysia,1618529,4,5,10,Tanjung Bungah, Penang, Malaysia
+149,Townhouse at Golden Heights,241 Riverside Drive, Gurney Drive, Penang 10250, Malaysia,1608472,1,1,5,Gurney Drive, Penang, Malaysia
+150,Luxury Villa at Platinum Plaza,547 Central Avenue, Bayan Lepas, Penang 11900, Malaysia,1249631,2,2,5,Bayan Lepas, Penang, Malaysia
+151,Luxury Condominium at The Grand,571 Sukhumvit Road, Central Jakarta, Jakarta 10110, Indonesia,7928167,3,4,9,Central Jakarta, Jakarta, Indonesia
+152,Modern Apartment at Sky Tower,609 Silom Road, South Jakarta, Jakarta 12190, Indonesia,5111275,4,5,12,South Jakarta, Jakarta, Indonesia
+153,Studio Unit at Riverside Residences,827 Sathorn Road, North Jakarta, Jakarta 14450, Indonesia,6600444,1,1,4,North Jakarta, Jakarta, Indonesia
+154,Penthouse Suite at Central Park,455 Ratchadamri Road, Sanur, Denpasar 80228, Indonesia,6196890,2,2,5,Sanur, Denpasar, Indonesia
+155,Executive Condo at Ocean View,64 Wireless Road, Seminyak, Denpasar 80361, Indonesia,5802452,3,4,10,Seminyak, Denpasar, Indonesia
+156,Waterfront Residence at Metro Heights,378 Ploenchit Road, Ubud, Denpasar 80571, Indonesia,5438301,4,5,10,Ubud, Denpasar, Indonesia
+157,Sky Villa at Garden Plaza,197 Rama IV Road, Canggu, Denpasar 80351, Indonesia,6326273,1,1,5,Canggu, Denpasar, Indonesia
+158,Garden View Unit at Crystal Tower,831 Charoen Krung Road, Nusa Dua, Denpasar 80363, Indonesia,9217536,2,2,6,Nusa Dua, Denpasar, Indonesia
+159,Townhouse at Sunset Residences,855 Thanon Phra Athit, Makati, Manila 1200, Philippines,7534989,3,4,9,Makati, Manila, Philippines
+160,Luxury Villa at Prime Location,861 Soi Thong Lo, BGC, Manila 1630, Philippines,7912389,4,5,11,BGC, Manila, Philippines
+161,Luxury Condominium at Royal Residence,920 Main Street, Ortigas, Manila 1605, Philippines,6597089,1,1,5,Ortigas, Manila, Philippines
+162,Modern Apartment at Elite Tower,457 Beach Road, Quezon City, Manila 1100, Philippines,6711470,2,2,7,Quezon City, Manila, Philippines
+163,Studio Unit at Paradise Condo,654 Park Avenue, Alabang, Manila 1780, Philippines,9019475,3,4,8,Alabang, Manila, Philippines
+164,Penthouse Suite at Golden Heights,520 Riverside Drive, Cebu City, Cebu 6000, Philippines,7724042,4,5,12,Cebu City, Cebu, Philippines
+165,Executive Condo at Platinum Plaza,809 Central Avenue, IT Park, Cebu 6000, Philippines,8637209,1,1,5,IT Park, Cebu, Philippines
+166,Waterfront Residence at The Grand,860 Sukhumvit Road, Ayala Center, Cebu 6000, Philippines,5414423,2,2,6,Ayala Center, Cebu, Philippines
+167,Sky Villa at Sky Tower,42 Silom Road, District 1, Ho Chi Minh City 700000, Vietnam,7246736,3,4,9,District 1, Ho Chi Minh City, Vietnam
+168,Garden View Unit at Riverside Residences,455 Sathorn Road, District 2, Ho Chi Minh City 700000, Vietnam,6345590,4,5,12,District 2, Ho Chi Minh City, Vietnam
+169,Townhouse at Central Park,594 Ratchadamri Road, District 3, Ho Chi Minh City 700000, Vietnam,7148620,1,1,4,District 3, Ho Chi Minh City, Vietnam
+170,Luxury Villa at Ocean View,445 Wireless Road, District 7, Ho Chi Minh City 700000, Vietnam,6295180,2,2,5,District 7, Ho Chi Minh City, Vietnam
+171,Luxury Condominium at Metro Heights,997 Ploenchit Road, Hoan Kiem, Hanoi 100000, Vietnam,8470289,3,4,10,Hoan Kiem, Hanoi, Vietnam
+172,Modern Apartment at Garden Plaza,832 Rama IV Road, Ba Dinh, Hanoi 100000, Vietnam,6147179,4,5,10,Ba Dinh, Hanoi, Vietnam
+173,Studio Unit at Crystal Tower,630 Charoen Krung Road, Tay Ho, Hanoi 100000, Vietnam,9306706,1,1,4,Tay Ho, Hanoi, Vietnam
+174,Penthouse Suite at Sunset Residences,16 Thanon Phra Athit, Cau Giay, Hanoi 100000, Vietnam,6506757,2,2,7,Cau Giay, Hanoi, Vietnam
+175,Executive Condo at Prime Location,7 Soi Thong Lo, My Khe, Da Nang 550000, Vietnam,8655477,3,4,9,My Khe, Da Nang, Vietnam
+176,Waterfront Residence at Royal Residence,946 Main Street, Ngu Hanh Son, Da Nang 550000, Vietnam,9466280,4,5,10,Ngu Hanh Son, Da Nang, Vietnam
+177,Sky Villa at Elite Tower,326 Beach Road, Hai Chau, Da Nang 550000, Vietnam,7079207,1,1,5,Hai Chau, Da Nang, Vietnam
+178,Garden View Unit at Paradise Condo,770 Park Avenue, Riverside, Phnom Penh 12000, Cambodia,6560049,2,2,7,Riverside, Phnom Penh, Cambodia
+179,Townhouse at Golden Heights,43 Riverside Drive, BKK1, Phnom Penh 12000, Cambodia,9148137,3,4,10,BKK1, Phnom Penh, Cambodia
+180,Luxury Villa at Platinum Plaza,246 Central Avenue, Toul Kork, Phnom Penh 12150, Cambodia,7966349,4,5,10,Toul Kork, Phnom Penh, Cambodia
+181,Luxury Condominium at The Grand,956 Sukhumvit Road, Old Market, Siem Reap 17252, Cambodia,9030967,1,1,3,Old Market, Siem Reap, Cambodia
+182,Modern Apartment at Sky Tower,107 Silom Road, Airport Road, Siem Reap 17252, Cambodia,7591994,2,2,5,Airport Road, Siem Reap, Cambodia
+183,Studio Unit at Riverside Residences,975 Sathorn Road, Downtown, Yangon 11181, Myanmar,5036154,3,4,9,Downtown, Yangon, Myanmar
+184,Penthouse Suite at Central Park,174 Ratchadamri Road, Bahan, Yangon 11181, Myanmar,6188564,4,5,10,Bahan, Yangon, Myanmar
+185,Executive Condo at Ocean View,42 Wireless Road, Mayangone, Yangon 11061, Myanmar,6809483,1,1,4,Mayangone, Yangon, Myanmar
+186,Waterfront Residence at Metro Heights,622 Ploenchit Road, Chanthabouly, Vientiane 01000, Laos,6445334,2,2,6,Chanthabouly, Vientiane, Laos
+187,Sky Villa at Garden Plaza,876 Rama IV Road, Sisattanak, Vientiane 01000, Laos,6442083,3,4,9,Sisattanak, Vientiane, Laos
+188,Garden View Unit at Crystal Tower,188 Charoen Krung Road, Old Town, Luang Prabang 06000, Laos,6062092,4,5,11,Old Town, Luang Prabang, Laos
+189,Townhouse at Sunset Residences,606 Thanon Phra Athit, Shibuya, Tokyo 150-0001, Japan,15552493,1,1,3,Shibuya, Tokyo, Japan
+190,Luxury Villa at Prime Location,549 Soi Thong Lo, Shinjuku, Tokyo 160-0022, Japan,17820527,2,2,6,Shinjuku, Tokyo, Japan
+191,Luxury Condominium at Royal Residence,786 Main Street, Ginza, Tokyo 104-0061, Japan,14650188,3,4,10,Ginza, Tokyo, Japan
+192,Modern Apartment at Elite Tower,520 Beach Road, Roppongi, Tokyo 106-0032, Japan,17345292,4,5,12,Roppongi, Tokyo, Japan
+193,Studio Unit at Paradise Condo,528 Park Avenue, Omotesando, Tokyo 150-0001, Japan,19316026,1,1,4,Omotesando, Tokyo, Japan
+194,Penthouse Suite at Golden Heights,370 Riverside Drive, Namba, Osaka 542-0076, Japan,15392986,2,2,6,Namba, Osaka, Japan
+195,Executive Condo at Platinum Plaza,972 Central Avenue, Umeda, Osaka 530-0001, Japan,13491164,3,4,8,Umeda, Osaka, Japan
+196,Waterfront Residence at The Grand,42 Sukhumvit Road, Shinsaibashi, Osaka 542-0085, Japan,13531619,4,5,12,Shinsaibashi, Osaka, Japan
+197,Sky Villa at Sky Tower,521 Silom Road, Gangnam, Seoul 06000, South Korea,7549539,1,1,3,Gangnam, Seoul, South Korea
+198,Garden View Unit at Riverside Residences,727 Sathorn Road, Itaewon, Seoul 04348, South Korea,6904067,2,2,5,Itaewon, Seoul, South Korea
+199,Townhouse at Central Park,458 Ratchadamri Road, Myeongdong, Seoul 04536, South Korea,12888985,3,4,10,Myeongdong, Seoul, South Korea
+200,Luxury Villa at Ocean View,383 Wireless Road, Hongdae, Seoul 04066, South Korea,12011131,4,5,12,Hongdae, Seoul, South Korea
+201,Luxury Condominium at Metro Heights,395 Ploenchit Road, Sukhumvit, Bangkok 10110, Thailand,19979407,1,1,4,Sukhumvit, Bangkok, Thailand
+202,Modern Apartment at Garden Plaza,296 Rama IV Road, Sathorn, Bangkok 10120, Thailand,18571261,2,2,6,Sathorn, Bangkok, Thailand
+203,Studio Unit at Crystal Tower,882 Charoen Krung Road, Silom, Bangkok 10500, Thailand,18747279,3,4,8,Silom, Bangkok, Thailand
+204,Penthouse Suite at Sunset Residences,460 Thanon Phra Athit, Phrom Phong, Bangkok 10110, Thailand,12280062,4,5,10,Phrom Phong, Bangkok, Thailand
+205,Executive Condo at Prime Location,351 Soi Thong Lo, Thong Lo, Bangkok 10110, Thailand,11887530,1,1,4,Thong Lo, Bangkok, Thailand
+206,Waterfront Residence at Royal Residence,458 Main Street, Ekkamai, Bangkok 10110, Thailand,10879372,2,2,5,Ekkamai, Bangkok, Thailand
+207,Sky Villa at Elite Tower,796 Beach Road, Asok, Bangkok 10110, Thailand,14810077,3,4,9,Asok, Bangkok, Thailand
+208,Garden View Unit at Paradise Condo,323 Park Avenue, Chidlom, Bangkok 10330, Thailand,22730157,4,5,10,Chidlom, Bangkok, Thailand
+209,Townhouse at Golden Heights,849 Riverside Drive, Lumpini, Bangkok 10330, Thailand,23149192,1,1,4,Lumpini, Bangkok, Thailand
+210,Luxury Villa at Platinum Plaza,233 Central Avenue, Riverside, Bangkok 10500, Thailand,13665502,2,2,7,Riverside, Bangkok, Thailand
+211,Luxury Condominium at The Grand,205 Sukhumvit Road, Old City, Chiang Mai 50200, Thailand,5847625,3,4,9,Old City, Chiang Mai, Thailand
+212,Modern Apartment at Sky Tower,728 Silom Road, Nimman, Chiang Mai 50200, Thailand,9213941,4,5,10,Nimman, Chiang Mai, Thailand
+213,Studio Unit at Riverside Residences,366 Sathorn Road, Airport, Chiang Mai 50100, Thailand,6368061,1,1,4,Airport, Chiang Mai, Thailand
+214,Penthouse Suite at Central Park,738 Ratchadamri Road, Patong, Phuket 83150, Thailand,5678138,2,2,6,Patong, Phuket, Thailand
+215,Executive Condo at Ocean View,393 Wireless Road, Kata, Phuket 83100, Thailand,9382469,3,4,9,Kata, Phuket, Thailand
+216,Waterfront Residence at Metro Heights,799 Ploenchit Road, Karon, Phuket 83100, Thailand,9429971,4,5,12,Karon, Phuket, Thailand
+217,Sky Villa at Garden Plaza,336 Rama IV Road, Bang Tao, Phuket 83110, Thailand,7286913,1,1,5,Bang Tao, Phuket, Thailand
+218,Garden View Unit at Crystal Tower,643 Charoen Krung Road, Kamala, Phuket 83120, Thailand,5637541,2,2,5,Kamala, Phuket, Thailand
+219,Townhouse at Sunset Residences,149 Thanon Phra Athit, North Pattaya, Chonburi 20150, Thailand,5419957,3,4,9,North Pattaya, Chonburi, Thailand
+220,Luxury Villa at Prime Location,70 Soi Thong Lo, Central Pattaya, Chonburi 20150, Thailand,7676970,4,5,12,Central Pattaya, Chonburi, Thailand
+221,Luxury Condominium at Royal Residence,14 Main Street, Jomtien, Chonburi 20260, Thailand,6629592,1,1,4,Jomtien, Chonburi, Thailand
+222,Modern Apartment at Elite Tower,244 Beach Road, Naklua, Chonburi 20150, Thailand,9659630,2,2,6,Naklua, Chonburi, Thailand
+223,Studio Unit at Paradise Condo,137 Park Avenue, Beach Road, Prachuap Khiri Khan 77110, Thailand,6802716,3,4,9,Beach Road, Prachuap Khiri Khan, Thailand
+224,Penthouse Suite at Golden Heights,61 Riverside Drive, Market Village, Prachuap Khiri Khan 77110, Thailand,5910067,4,5,12,Market Village, Prachuap Khiri Khan, Thailand
+225,Executive Condo at Platinum Plaza,102 Central Avenue, Black Mountain, Prachuap Khiri Khan 77110, Thailand,9550124,1,1,5,Black Mountain, Prachuap Khiri Khan, Thailand
+226,Waterfront Residence at The Grand,533 Sukhumvit Road, Bang Na, Bangkok 10260, Thailand,8499989,2,2,6,Bang Na, Bangkok, Thailand
+227,Sky Villa at Sky Tower,959 Silom Road, On Nut, Bangkok 10250, Thailand,14943069,3,4,9,On Nut, Bangkok, Thailand
+228,Garden View Unit at Riverside Residences,892 Sathorn Road, Bearing, Bangkok 10110, Thailand,9551486,4,5,11,Bearing, Bangkok, Thailand
+229,Townhouse at Central Park,154 Ratchadamri Road, Udom Suk, Bangkok 10260, Thailand,11700126,1,1,3,Udom Suk, Bangkok, Thailand
+230,Luxury Villa at Ocean View,597 Wireless Road, Punnawithi, Bangkok 10110, Thailand,11653927,2,2,6,Punnawithi, Bangkok, Thailand
+231,Luxury Condominium at Metro Heights,356 Ploenchit Road, Orchard, Singapore 238801, Singapore,847776,3,4,10,Orchard, Singapore, Singapore
+232,Modern Apartment at Garden Plaza,984 Rama IV Road, Marina Bay, Singapore 018956, Singapore,975427,4,5,11,Marina Bay, Singapore, Singapore
+233,Studio Unit at Crystal Tower,760 Charoen Krung Road, Sentosa, Singapore 099538, Singapore,966306,1,1,5,Sentosa, Singapore, Singapore
+234,Penthouse Suite at Sunset Residences,139 Thanon Phra Athit, Clarke Quay, Singapore 059817, Singapore,1834750,2,2,5,Clarke Quay, Singapore, Singapore
+235,Executive Condo at Prime Location,940 Soi Thong Lo, Robertson Quay, Singapore 238801, Singapore,1336798,3,4,10,Robertson Quay, Singapore, Singapore
+236,Waterfront Residence at Royal Residence,922 Main Street, River Valley, Singapore 238801, Singapore,991053,4,5,10,River Valley, Singapore, Singapore
+237,Sky Villa at Elite Tower,848 Beach Road, Newton, Singapore 307683, Singapore,1832809,1,1,4,Newton, Singapore, Singapore
+238,Garden View Unit at Paradise Condo,214 Park Avenue, Novena, Singapore 307683, Singapore,960015,2,2,5,Novena, Singapore, Singapore
+239,Townhouse at Golden Heights,563 Riverside Drive, Harbourfront, Singapore 099538, Singapore,1252320,3,4,10,Harbourfront, Singapore, Singapore
+240,Luxury Villa at Platinum Plaza,486 Central Avenue, East Coast, Singapore 428795, Singapore,1446305,4,5,11,East Coast, Singapore, Singapore
+241,Luxury Condominium at The Grand,200 Sukhumvit Road, KLCC, Kuala Lumpur 50088, Malaysia,1711624,1,1,5,KLCC, Kuala Lumpur, Malaysia
+242,Modern Apartment at Sky Tower,981 Silom Road, Bukit Bintang, Kuala Lumpur 50250, Malaysia,1392070,2,2,5,Bukit Bintang, Kuala Lumpur, Malaysia
+243,Studio Unit at Riverside Residences,164 Sathorn Road, Mont Kiara, Kuala Lumpur 50480, Malaysia,1613996,3,4,10,Mont Kiara, Kuala Lumpur, Malaysia
+244,Penthouse Suite at Central Park,373 Ratchadamri Road, Bangsar, Kuala Lumpur 59000, Malaysia,1806476,4,5,12,Bangsar, Kuala Lumpur, Malaysia
+245,Executive Condo at Ocean View,693 Wireless Road, KL Sentral, Kuala Lumpur 50470, Malaysia,1238439,1,1,4,KL Sentral, Kuala Lumpur, Malaysia
+246,Waterfront Residence at Metro Heights,886 Ploenchit Road, Georgetown, Penang 10200, Malaysia,1039851,2,2,6,Georgetown, Penang, Malaysia
+247,Sky Villa at Garden Plaza,702 Rama IV Road, Batu Ferringhi, Penang 11100, Malaysia,1250466,3,4,9,Batu Ferringhi, Penang, Malaysia
+248,Garden View Unit at Crystal Tower,300 Charoen Krung Road, Tanjung Bungah, Penang 11200, Malaysia,818935,4,5,11,Tanjung Bungah, Penang, Malaysia
+249,Townhouse at Sunset Residences,986 Thanon Phra Athit, Gurney Drive, Penang 10250, Malaysia,1133032,1,1,3,Gurney Drive, Penang, Malaysia
+250,Luxury Villa at Prime Location,850 Soi Thong Lo, Bayan Lepas, Penang 11900, Malaysia,1528333,2,2,5,Bayan Lepas, Penang, Malaysia
+251,Luxury Condominium at Royal Residence,115 Main Street, Central Jakarta, Jakarta 10110, Indonesia,8545462,3,4,10,Central Jakarta, Jakarta, Indonesia
+252,Modern Apartment at Elite Tower,124 Beach Road, South Jakarta, Jakarta 12190, Indonesia,5119251,4,5,11,South Jakarta, Jakarta, Indonesia
+253,Studio Unit at Paradise Condo,979 Park Avenue, North Jakarta, Jakarta 14450, Indonesia,9798389,1,1,4,North Jakarta, Jakarta, Indonesia
+254,Penthouse Suite at Golden Heights,39 Riverside Drive, Sanur, Denpasar 80228, Indonesia,5632752,2,2,7,Sanur, Denpasar, Indonesia
+255,Executive Condo at Platinum Plaza,40 Central Avenue, Seminyak, Denpasar 80361, Indonesia,6617253,3,4,10,Seminyak, Denpasar, Indonesia
+256,Waterfront Residence at The Grand,341 Sukhumvit Road, Ubud, Denpasar 80571, Indonesia,8785388,4,5,10,Ubud, Denpasar, Indonesia
+257,Sky Villa at Sky Tower,708 Silom Road, Canggu, Denpasar 80351, Indonesia,7734230,1,1,3,Canggu, Denpasar, Indonesia
+258,Garden View Unit at Riverside Residences,832 Sathorn Road, Nusa Dua, Denpasar 80363, Indonesia,5371382,2,2,7,Nusa Dua, Denpasar, Indonesia
+259,Townhouse at Central Park,743 Ratchadamri Road, Makati, Manila 1200, Philippines,6388942,3,4,8,Makati, Manila, Philippines
+260,Luxury Villa at Ocean View,384 Wireless Road, BGC, Manila 1630, Philippines,6243543,4,5,12,BGC, Manila, Philippines
+261,Luxury Condominium at Metro Heights,891 Ploenchit Road, Ortigas, Manila 1605, Philippines,9431168,1,1,4,Ortigas, Manila, Philippines
+262,Modern Apartment at Garden Plaza,423 Rama IV Road, Quezon City, Manila 1100, Philippines,6630984,2,2,6,Quezon City, Manila, Philippines
+263,Studio Unit at Crystal Tower,76 Charoen Krung Road, Alabang, Manila 1780, Philippines,8476790,3,4,10,Alabang, Manila, Philippines
+264,Penthouse Suite at Sunset Residences,902 Thanon Phra Athit, Cebu City, Cebu 6000, Philippines,8228036,4,5,12,Cebu City, Cebu, Philippines
+265,Executive Condo at Prime Location,221 Soi Thong Lo, IT Park, Cebu 6000, Philippines,5582119,1,1,5,IT Park, Cebu, Philippines
+266,Waterfront Residence at Royal Residence,178 Main Street, Ayala Center, Cebu 6000, Philippines,7710442,2,2,6,Ayala Center, Cebu, Philippines
+267,Sky Villa at Elite Tower,455 Beach Road, District 1, Ho Chi Minh City 700000, Vietnam,9180249,3,4,9,District 1, Ho Chi Minh City, Vietnam
+268,Garden View Unit at Paradise Condo,734 Park Avenue, District 2, Ho Chi Minh City 700000, Vietnam,5186862,4,5,12,District 2, Ho Chi Minh City, Vietnam
+269,Townhouse at Golden Heights,466 Riverside Drive, District 3, Ho Chi Minh City 700000, Vietnam,5033843,1,1,5,District 3, Ho Chi Minh City, Vietnam
+270,Luxury Villa at Platinum Plaza,128 Central Avenue, District 7, Ho Chi Minh City 700000, Vietnam,6689163,2,2,5,District 7, Ho Chi Minh City, Vietnam
+271,Luxury Condominium at The Grand,509 Sukhumvit Road, Hoan Kiem, Hanoi 100000, Vietnam,5888328,3,4,9,Hoan Kiem, Hanoi, Vietnam
+272,Modern Apartment at Sky Tower,339 Silom Road, Ba Dinh, Hanoi 100000, Vietnam,8352787,4,5,10,Ba Dinh, Hanoi, Vietnam
+273,Studio Unit at Riverside Residences,60 Sathorn Road, Tay Ho, Hanoi 100000, Vietnam,8353290,1,1,3,Tay Ho, Hanoi, Vietnam
+274,Penthouse Suite at Central Park,844 Ratchadamri Road, Cau Giay, Hanoi 100000, Vietnam,5697877,2,2,5,Cau Giay, Hanoi, Vietnam
+275,Executive Condo at Ocean View,720 Wireless Road, My Khe, Da Nang 550000, Vietnam,8011432,3,4,8,My Khe, Da Nang, Vietnam
+276,Waterfront Residence at Metro Heights,707 Ploenchit Road, Ngu Hanh Son, Da Nang 550000, Vietnam,9812146,4,5,11,Ngu Hanh Son, Da Nang, Vietnam
+277,Sky Villa at Garden Plaza,917 Rama IV Road, Hai Chau, Da Nang 550000, Vietnam,6946738,1,1,4,Hai Chau, Da Nang, Vietnam
+278,Garden View Unit at Crystal Tower,867 Charoen Krung Road, Riverside, Phnom Penh 12000, Cambodia,5962343,2,2,7,Riverside, Phnom Penh, Cambodia
+279,Townhouse at Sunset Residences,497 Thanon Phra Athit, BKK1, Phnom Penh 12000, Cambodia,8299595,3,4,8,BKK1, Phnom Penh, Cambodia
+280,Luxury Villa at Prime Location,425 Soi Thong Lo, Toul Kork, Phnom Penh 12150, Cambodia,9880676,4,5,11,Toul Kork, Phnom Penh, Cambodia
+281,Luxury Condominium at Royal Residence,471 Main Street, Old Market, Siem Reap 17252, Cambodia,6591745,1,1,4,Old Market, Siem Reap, Cambodia
+282,Modern Apartment at Elite Tower,703 Beach Road, Airport Road, Siem Reap 17252, Cambodia,9705974,2,2,5,Airport Road, Siem Reap, Cambodia
+283,Studio Unit at Paradise Condo,15 Park Avenue, Downtown, Yangon 11181, Myanmar,5800570,3,4,9,Downtown, Yangon, Myanmar
+284,Penthouse Suite at Golden Heights,916 Riverside Drive, Bahan, Yangon 11181, Myanmar,5412447,4,5,10,Bahan, Yangon, Myanmar
+285,Executive Condo at Platinum Plaza,573 Central Avenue, Mayangone, Yangon 11061, Myanmar,6277729,1,1,4,Mayangone, Yangon, Myanmar
+286,Waterfront Residence at The Grand,665 Sukhumvit Road, Chanthabouly, Vientiane 01000, Laos,8703361,2,2,7,Chanthabouly, Vientiane, Laos
+287,Sky Villa at Sky Tower,967 Silom Road, Sisattanak, Vientiane 01000, Laos,5158495,3,4,10,Sisattanak, Vientiane, Laos
+288,Garden View Unit at Riverside Residences,754 Sathorn Road, Old Town, Luang Prabang 06000, Laos,9386378,4,5,12,Old Town, Luang Prabang, Laos
+289,Townhouse at Central Park,887 Ratchadamri Road, Shibuya, Tokyo 150-0001, Japan,13340875,1,1,5,Shibuya, Tokyo, Japan
+290,Luxury Villa at Ocean View,58 Wireless Road, Shinjuku, Tokyo 160-0022, Japan,16112843,2,2,7,Shinjuku, Tokyo, Japan
+291,Luxury Condominium at Metro Heights,158 Ploenchit Road, Ginza, Tokyo 104-0061, Japan,16402702,3,4,8,Ginza, Tokyo, Japan
+292,Modern Apartment at Garden Plaza,883 Rama IV Road, Roppongi, Tokyo 106-0032, Japan,12249452,4,5,12,Roppongi, Tokyo, Japan
+293,Studio Unit at Crystal Tower,743 Charoen Krung Road, Omotesando, Tokyo 150-0001, Japan,11778995,1,1,3,Omotesando, Tokyo, Japan
+294,Penthouse Suite at Sunset Residences,407 Thanon Phra Athit, Namba, Osaka 542-0076, Japan,20400070,2,2,6,Namba, Osaka, Japan
+295,Executive Condo at Prime Location,137 Soi Thong Lo, Umeda, Osaka 530-0001, Japan,22006673,3,4,10,Umeda, Osaka, Japan
+296,Waterfront Residence at Royal Residence,408 Main Street, Shinsaibashi, Osaka 542-0085, Japan,14954063,4,5,11,Shinsaibashi, Osaka, Japan
+297,Sky Villa at Elite Tower,723 Beach Road, Gangnam, Seoul 06000, South Korea,10734384,1,1,4,Gangnam, Seoul, South Korea
+298,Garden View Unit at Paradise Condo,374 Park Avenue, Itaewon, Seoul 04348, South Korea,11367458,2,2,5,Itaewon, Seoul, South Korea
+299,Townhouse at Golden Heights,132 Riverside Drive, Myeongdong, Seoul 04536, South Korea,10669643,3,4,8,Myeongdong, Seoul, South Korea
+300,Luxury Villa at Platinum Plaza,572 Central Avenue, Hongdae, Seoul 04066, South Korea,9947610,4,5,10,Hongdae, Seoul, South Korea

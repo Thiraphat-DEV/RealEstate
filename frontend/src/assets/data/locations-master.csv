@@ -1,0 +1,101 @@
+id,country,location,region,city,district,postal_code,latitude,longitude
+1,Thailand,Bangkok,Central,Bangkok,Sukhumvit,10110,13.7563,100.5018
+2,Thailand,Bangkok,Central,Bangkok,Sathorn,10120,13.7206,100.5350
+3,Thailand,Bangkok,Central,Bangkok,Silom,10500,13.7300,100.5350
+4,Thailand,Bangkok,Central,Bangkok,Phrom Phong,10110,13.7300,100.5600
+5,Thailand,Bangkok,Central,Bangkok,Thong Lo,10110,13.7300,100.5800
+6,Thailand,Bangkok,Central,Bangkok,Ekkamai,10110,13.7300,100.5900
+7,Thailand,Bangkok,Central,Bangkok,Asok,10110,13.7300,100.5600
+8,Thailand,Bangkok,Central,Bangkok,Chidlom,10330,13.7500,100.5400
+9,Thailand,Bangkok,Central,Bangkok,Lumpini,10330,13.7300,100.5400
+10,Thailand,Bangkok,Central,Bangkok,Riverside,10500,13.7200,100.5100
+11,Thailand,Chiang Mai,Northern,Chiang Mai,Old City,50200,18.7883,98.9853
+12,Thailand,Chiang Mai,Northern,Chiang Mai,Nimman,50200,18.8000,98.9700
+13,Thailand,Chiang Mai,Northern,Chiang Mai,Airport,50100,18.7700,98.9600
+14,Thailand,Phuket,Southern,Phuket,Patong,83150,7.8804,98.3923
+15,Thailand,Phuket,Southern,Phuket,Kata,83100,7.8200,98.2900
+16,Thailand,Phuket,Southern,Phuket,Karon,83100,7.8400,98.3000
+17,Thailand,Phuket,Southern,Phuket,Bang Tao,83110,7.9800,98.2800
+18,Thailand,Phuket,Southern,Phuket,Kamala,83120,7.9400,98.2800
+19,Thailand,Pattaya,Eastern,Chonburi,North Pattaya,20150,12.9236,100.8825
+20,Thailand,Pattaya,Eastern,Chonburi,Central Pattaya,20150,12.9200,100.8800
+21,Thailand,Pattaya,Eastern,Chonburi,Jomtien,20260,12.9000,100.8700
+22,Thailand,Pattaya,Eastern,Chonburi,Naklua,20150,12.9600,100.9000
+23,Thailand,Hua Hin,Central,Prachuap Khiri Khan,Beach Road,77110,12.5683,99.9577
+24,Thailand,Hua Hin,Central,Prachuap Khiri Khan,Market Village,77110,12.5700,99.9600
+25,Thailand,Hua Hin,Central,Prachuap Khiri Khan,Black Mountain,77110,12.5500,99.9500
+26,Thailand,Bangkok,Central,Bangkok,Bang Na,10260,13.6800,100.6000
+27,Thailand,Bangkok,Central,Bangkok,On Nut,10250,13.7000,100.6000
+28,Thailand,Bangkok,Central,Bangkok,Bearing,10110,13.6800,100.6000
+29,Thailand,Bangkok,Central,Bangkok,Udom Suk,10260,13.6800,100.6000
+30,Thailand,Bangkok,Central,Bangkok,Punnawithi,10110,13.6800,100.6000
+31,Singapore,Singapore,Central,Singapore,Orchard,238801,1.3048,103.8318
+32,Singapore,Singapore,Central,Singapore,Marina Bay,018956,1.2816,103.8606
+33,Singapore,Singapore,Central,Singapore,Sentosa,099538,1.2494,103.8300
+34,Singapore,Singapore,Central,Singapore,Clarke Quay,059817,1.2900,103.8400
+35,Singapore,Singapore,Central,Singapore,Robertson Quay,238801,1.2950,103.8400
+36,Singapore,Singapore,Central,Singapore,River Valley,238801,1.3000,103.8400
+37,Singapore,Singapore,Central,Singapore,Newton,307683,1.3100,103.8400
+38,Singapore,Singapore,Central,Singapore,Novena,307683,1.3200,103.8400
+39,Singapore,Singapore,Central,Singapore,Harbourfront,099538,1.2650,103.8200
+40,Singapore,Singapore,Central,Singapore,East Coast,428795,1.3000,103.9000
+41,Malaysia,Kuala Lumpur,Central,Kuala Lumpur,KLCC,50088,3.1579,101.7117
+42,Malaysia,Kuala Lumpur,Central,Kuala Lumpur,Bukit Bintang,50250,3.1480,101.7000
+43,Malaysia,Kuala Lumpur,Central,Kuala Lumpur,Mont Kiara,50480,3.1700,101.6500
+44,Malaysia,Kuala Lumpur,Central,Kuala Lumpur,Bangsar,59000,3.1300,101.6700
+45,Malaysia,Kuala Lumpur,Central,Kuala Lumpur,KL Sentral,50470,3.1340,101.6867
+46,Malaysia,Penang,Northern,Penang,Georgetown,10200,5.4141,100.3288
+47,Malaysia,Penang,Northern,Penang,Batu Ferringhi,11100,5.4700,100.2500
+48,Malaysia,Penang,Northern,Penang,Tanjung Bungah,11200,5.4500,100.2800
+49,Malaysia,Penang,Northern,Penang,Gurney Drive,10250,5.4300,100.3100
+50,Malaysia,Penang,Northern,Penang,Bayan Lepas,11900,5.2900,100.2800
+51,Indonesia,Jakarta,Java,Jakarta,Central Jakarta,10110,-6.2088,106.8456
+52,Indonesia,Jakarta,Java,Jakarta,South Jakarta,12190,-6.2297,106.7997
+53,Indonesia,Jakarta,Java,Jakarta,North Jakarta,14450,-6.1214,106.7741
+54,Indonesia,Bali,Bali,Denpasar,Sanur,80228,-8.6700,115.2600
+55,Indonesia,Bali,Bali,Denpasar,Seminyak,80361,-8.6800,115.1700
+56,Indonesia,Bali,Bali,Denpasar,Ubud,80571,-8.5000,115.2600
+57,Indonesia,Bali,Bali,Denpasar,Canggu,80351,-8.6500,115.1400
+58,Indonesia,Bali,Bali,Denpasar,Nusa Dua,80363,-8.8000,115.2300
+59,Philippines,Manila,Metro Manila,Manila,Makati,1200,14.5547,121.0244
+60,Philippines,Manila,Metro Manila,Manila,BGC,1630,14.5500,121.0500
+61,Philippines,Manila,Metro Manila,Manila,Ortigas,1605,14.5800,121.0600
+62,Philippines,Manila,Metro Manila,Manila,Quezon City,1100,14.6500,121.0300
+63,Philippines,Manila,Metro Manila,Manila,Alabang,1780,14.4200,121.0200
+64,Philippines,Cebu,Visayas,Cebu,Cebu City,6000,10.3157,123.8854
+65,Philippines,Cebu,Visayas,Cebu,IT Park,6000,10.3200,123.9000
+66,Philippines,Cebu,Visayas,Cebu,Ayala Center,6000,10.3100,123.8900
+67,Vietnam,Ho Chi Minh City,South,Ho Chi Minh City,District 1,700000,10.7769,106.7009
+68,Vietnam,Ho Chi Minh City,South,Ho Chi Minh City,District 2,700000,10.7900,106.7500
+69,Vietnam,Ho Chi Minh City,South,Ho Chi Minh City,District 3,700000,10.7800,106.6900
+70,Vietnam,Ho Chi Minh City,South,Ho Chi Minh City,District 7,700000,10.7300,106.7200
+71,Vietnam,Hanoi,North,Hanoi,Hoan Kiem,100000,21.0285,105.8542
+72,Vietnam,Hanoi,North,Hanoi,Ba Dinh,100000,21.0400,105.8400
+73,Vietnam,Hanoi,North,Hanoi,Tay Ho,100000,21.0700,105.8200
+74,Vietnam,Hanoi,North,Hanoi,Cau Giay,100000,21.0300,105.8000
+75,Vietnam,Da Nang,Central,Da Nang,My Khe,550000,16.0544,108.2022
+76,Vietnam,Da Nang,Central,Da Nang,Ngu Hanh Son,550000,16.0400,108.2200
+77,Vietnam,Da Nang,Central,Da Nang,Hai Chau,550000,16.0600,108.2200
+78,Cambodia,Phnom Penh,Central,Phnom Penh,Riverside,12000,11.5564,104.9282
+79,Cambodia,Phnom Penh,Central,Phnom Penh,BKK1,12000,11.5500,104.9200
+80,Cambodia,Phnom Penh,Central,Phnom Penh,Toul Kork,12150,11.5700,104.9000
+81,Cambodia,Siem Reap,Northwest,Siem Reap,Old Market,17252,13.4125,103.8670
+82,Cambodia,Siem Reap,Northwest,Siem Reap,Airport Road,17252,13.4200,103.8500
+83,Myanmar,Yangon,Central,Yangon,Downtown,11181,16.8661,96.1951
+84,Myanmar,Yangon,Central,Yangon,Bahan,11181,16.8500,96.1500
+85,Myanmar,Yangon,Central,Yangon,Mayangone,11061,16.8700,96.1700
+86,Laos,Vientiane,Central,Vientiane,Chanthabouly,01000,17.9757,102.6331
+87,Laos,Vientiane,Central,Vientiane,Sisattanak,01000,17.9800,102.6400
+88,Laos,Luang Prabang,Northern,Luang Prabang,Old Town,06000,19.8834,102.1347
+89,Japan,Tokyo,Kanto,Tokyo,Shibuya,150-0001,35.6580,139.7016
+90,Japan,Tokyo,Kanto,Tokyo,Shinjuku,160-0022,35.6938,139.7034
+91,Japan,Tokyo,Kanto,Tokyo,Ginza,104-0061,35.6719,139.7650
+92,Japan,Tokyo,Kanto,Tokyo,Roppongi,106-0032,35.6627,139.7314
+93,Japan,Tokyo,Kanto,Tokyo,Omotesando,150-0001,35.6690,139.7100
+94,Japan,Osaka,Kansai,Osaka,Namba,542-0076,34.6636,135.5017
+95,Japan,Osaka,Kansai,Osaka,Umeda,530-0001,34.7025,135.4959
+96,Japan,Osaka,Kansai,Osaka,Shinsaibashi,542-0085,34.6700,135.5000
+97,South Korea,Seoul,Seoul,Seoul,Gangnam,06000,37.4979,127.0276
+98,South Korea,Seoul,Seoul,Seoul,Itaewon,04348,37.5347,126.9946
+99,South Korea,Seoul,Seoul,Seoul,Myeongdong,04536,37.5636,126.9826
+100,South Korea,Seoul,Seoul,Seoul,Hongdae,04066,37.5563,126.9236
