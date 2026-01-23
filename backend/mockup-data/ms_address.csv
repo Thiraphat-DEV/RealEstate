@@ -1,0 +1,301 @@
+address,cityCode,district,subDistrict,postalCode,latitude,longitude
+10 Sukhumvit Road,BKK01,Khlong Toei,Watthana,10000,13.0000,100.0000
+20 Silom Road,CM01,Watthana,Khlong Toei,10001,13.0100,100.0100
+30 Ratchadamri Road,PK01,Mueang Chiang Mai,Nimman,10002,13.0200,100.0200
+40 Phetchaburi Road,PT01,Nimman,Patong,10003,13.0300,100.0300
+50 Rama IV Road,HD01,Kathu,Hua Hin,10004,13.0400,100.0400
+60 Charoen Krung Road,KK01,Patong,Mueang Khon Kaen,10005,13.0500,100.0500
+70 Sathon Road,UD01,Bang Lamung,Mueang Udon Thani,10006,13.0600,100.0600
+80 Wireless Road,NK01,Hua Hin,Mueang Nakhon Ratchasima,10007,13.0700,100.0700
+90 Nimmanhaemin Road,SG01,Mueang Khon Kaen,Mueang Songkhla,10008,13.0800,100.0800
+100 Patong Beach Road,AY01,Mueang Udon Thani,Hat Yai,10009,13.0900,100.0900
+110 Beach Road,CR01,Mueang Nakhon Ratchasima,Sukhumvit,10010,13.1000,100.1000
+120 Petchkasem Road,LP01,Mueang Songkhla,Sathon,10011,13.1100,100.1100
+130 Mittraphap Road,RB01,Hat Yai,Bang Rak,10012,13.1200,100.1200
+140 Nittayo Road,SR01,Sukhumvit,Pathum Wan,10013,13.1300,100.1300
+150 Niphat Uthit Road,TR01,Sathon,Ratchathewi,10014,13.1400,100.1400
+160 Phetkasem Road,YK01,Bang Rak,Dusit,10015,13.1500,100.1500
+170 Thanon Phahonyothin,NS01,Pathum Wan,Phra Nakhon,10016,13.1600,100.1600
+180 Thanon Ratchadaphisek,PS01,Ratchathewi,Bang Kapi,10017,13.1700,100.1700
+190 Thanon Lat Phrao,SK01,Dusit,Lat Phrao,10018,13.1800,100.1800
+200 Thanon Ramkhamhaeng,YS01,Phra Nakhon,Wang Thonglang,10019,13.1900,100.1900
+210 Thanon Srinagarindra,BP01,Khlong Toei,Watthana,10020,13.2000,100.2000
+220 Thanon Sukhumvit,SP01,Watthana,Khlong Toei,10021,13.2100,100.2100
+230 Thanon Charoen Nakhon,KB01,Mueang Chiang Mai,Nimman,10022,13.2200,100.2200
+240 Thanon Ratchaprarop,CN01,Nimman,Patong,10023,13.2300,100.2300
+250 Thanon Phaya Thai,RN01,Kathu,Hua Hin,10024,13.2400,100.2400
+260 Sukhumvit Road,PN01,Patong,Mueang Khon Kaen,10025,13.2500,100.2500
+270 Silom Road,PC01,Bang Lamung,Mueang Udon Thani,10026,13.2600,100.2600
+280 Ratchadamri Road,ST01,Hua Hin,Mueang Nakhon Ratchasima,10027,13.2700,100.2700
+290 Phetchaburi Road,UT01,Mueang Khon Kaen,Mueang Songkhla,10028,13.2800,100.2800
+300 Rama IV Road,CT01,Mueang Udon Thani,Hat Yai,10029,13.2900,100.2900
+310 Charoen Krung Road,BKK02,Mueang Nakhon Ratchasima,Sukhumvit,10030,13.3000,100.3000
+320 Sathon Road,CM02,Mueang Songkhla,Sathon,10031,13.3100,100.3100
+330 Wireless Road,PK02,Hat Yai,Bang Rak,10032,13.3200,100.3200
+340 Nimmanhaemin Road,PT02,Sukhumvit,Pathum Wan,10033,13.3300,100.3300
+350 Patong Beach Road,HD02,Sathon,Ratchathewi,10034,13.3400,100.3400
+360 Beach Road,KK02,Bang Rak,Dusit,10035,13.3500,100.3500
+370 Petchkasem Road,UD02,Pathum Wan,Phra Nakhon,10036,13.3600,100.3600
+380 Mittraphap Road,NK02,Ratchathewi,Bang Kapi,10037,13.3700,100.3700
+390 Nittayo Road,SG02,Dusit,Lat Phrao,10038,13.3800,100.3800
+400 Niphat Uthit Road,AY02,Phra Nakhon,Wang Thonglang,10039,13.3900,100.3900
+410 Phetkasem Road,CR02,Khlong Toei,Watthana,10040,13.4000,100.4000
+420 Thanon Phahonyothin,LP02,Watthana,Khlong Toei,10041,13.4100,100.4100
+430 Thanon Ratchadaphisek,RB02,Mueang Chiang Mai,Nimman,10042,13.4200,100.4200
+440 Thanon Lat Phrao,SR02,Nimman,Patong,10043,13.4300,100.4300
+450 Thanon Ramkhamhaeng,TR02,Kathu,Hua Hin,10044,13.4400,100.4400
+460 Thanon Srinagarindra,YK02,Patong,Mueang Khon Kaen,10045,13.4500,100.4500
+470 Thanon Sukhumvit,NS02,Bang Lamung,Mueang Udon Thani,10046,13.4600,100.4600
+480 Thanon Charoen Nakhon,PS02,Hua Hin,Mueang Nakhon Ratchasima,10047,13.4700,100.4700
+490 Thanon Ratchaprarop,SK02,Mueang Khon Kaen,Mueang Songkhla,10048,13.4800,100.4800
+500 Thanon Phaya Thai,YS02,Mueang Udon Thani,Hat Yai,10049,13.4900,100.4900
+510 Sukhumvit Road,BP02,Mueang Nakhon Ratchasima,Sukhumvit,10050,13.5000,100.5000
+520 Silom Road,SP02,Mueang Songkhla,Sathon,10051,13.5100,100.5100
+530 Ratchadamri Road,KB02,Hat Yai,Bang Rak,10052,13.5200,100.5200
+540 Phetchaburi Road,CN02,Sukhumvit,Pathum Wan,10053,13.5300,100.5300
+550 Rama IV Road,RN02,Sathon,Ratchathewi,10054,13.5400,100.5400
+560 Charoen Krung Road,PN02,Bang Rak,Dusit,10055,13.5500,100.5500
+570 Sathon Road,PC02,Pathum Wan,Phra Nakhon,10056,13.5600,100.5600
+580 Wireless Road,ST02,Ratchathewi,Bang Kapi,10057,13.5700,100.5700
+590 Nimmanhaemin Road,UT02,Dusit,Lat Phrao,10058,13.5800,100.5800
+600 Patong Beach Road,CT02,Phra Nakhon,Wang Thonglang,10059,13.5900,100.5900
+610 Beach Road,BKK03,Khlong Toei,Watthana,10060,13.6000,100.6000
+620 Petchkasem Road,CM03,Watthana,Khlong Toei,10061,13.6100,100.6100
+630 Mittraphap Road,PK03,Mueang Chiang Mai,Nimman,10062,13.6200,100.6200
+640 Nittayo Road,PT03,Nimman,Patong,10063,13.6300,100.6300
+650 Niphat Uthit Road,HD03,Kathu,Hua Hin,10064,13.6400,100.6400
+660 Phetkasem Road,KK03,Patong,Mueang Khon Kaen,10065,13.6500,100.6500
+670 Thanon Phahonyothin,UD03,Bang Lamung,Mueang Udon Thani,10066,13.6600,100.6600
+680 Thanon Ratchadaphisek,NK03,Hua Hin,Mueang Nakhon Ratchasima,10067,13.6700,100.6700
+690 Thanon Lat Phrao,SG03,Mueang Khon Kaen,Mueang Songkhla,10068,13.6800,100.6800
+700 Thanon Ramkhamhaeng,AY03,Mueang Udon Thani,Hat Yai,10069,13.6900,100.6900
+710 Thanon Srinagarindra,CR03,Mueang Nakhon Ratchasima,Sukhumvit,10070,13.7000,100.7000
+720 Thanon Sukhumvit,LP03,Mueang Songkhla,Sathon,10071,13.7100,100.7100
+730 Thanon Charoen Nakhon,RB03,Hat Yai,Bang Rak,10072,13.7200,100.7200
+740 Thanon Ratchaprarop,SR03,Sukhumvit,Pathum Wan,10073,13.7300,100.7300
+750 Thanon Phaya Thai,TR03,Sathon,Ratchathewi,10074,13.7400,100.7400
+760 Sukhumvit Road,YK03,Bang Rak,Dusit,10075,13.7500,100.7500
+770 Silom Road,NS03,Pathum Wan,Phra Nakhon,10076,13.7600,100.7600
+780 Ratchadamri Road,PS03,Ratchathewi,Bang Kapi,10077,13.7700,100.7700
+790 Phetchaburi Road,SK03,Dusit,Lat Phrao,10078,13.7800,100.7800
+800 Rama IV Road,YS03,Phra Nakhon,Wang Thonglang,10079,13.7900,100.7900
+810 Charoen Krung Road,BP03,Khlong Toei,Watthana,10080,13.8000,100.8000
+820 Sathon Road,SP03,Watthana,Khlong Toei,10081,13.8100,100.8100
+830 Wireless Road,KB03,Mueang Chiang Mai,Nimman,10082,13.8200,100.8200
+840 Nimmanhaemin Road,CN03,Nimman,Patong,10083,13.8300,100.8300
+850 Patong Beach Road,RN03,Kathu,Hua Hin,10084,13.8400,100.8400
+860 Beach Road,PN03,Patong,Mueang Khon Kaen,10085,13.8500,100.8500
+870 Petchkasem Road,PC03,Bang Lamung,Mueang Udon Thani,10086,13.8600,100.8600
+880 Mittraphap Road,ST03,Hua Hin,Mueang Nakhon Ratchasima,10087,13.8700,100.8700
+890 Nittayo Road,UT03,Mueang Khon Kaen,Mueang Songkhla,10088,13.8800,100.8800
+900 Niphat Uthit Road,CT03,Mueang Udon Thani,Hat Yai,10089,13.8900,100.8900
+910 Phetkasem Road,BKK04,Mueang Nakhon Ratchasima,Sukhumvit,10090,13.9000,100.9000
+920 Thanon Phahonyothin,CM04,Mueang Songkhla,Sathon,10091,13.9100,100.9100
+930 Thanon Ratchadaphisek,PK04,Hat Yai,Bang Rak,10092,13.9200,100.9200
+940 Thanon Lat Phrao,PT04,Sukhumvit,Pathum Wan,10093,13.9300,100.9300
+950 Thanon Ramkhamhaeng,HD04,Sathon,Ratchathewi,10094,13.9400,100.9400
+960 Thanon Srinagarindra,KK04,Bang Rak,Dusit,10095,13.9500,100.9500
+970 Thanon Sukhumvit,UD04,Pathum Wan,Phra Nakhon,10096,13.9600,100.9600
+980 Thanon Charoen Nakhon,NK04,Ratchathewi,Bang Kapi,10097,13.9700,100.9700
+990 Thanon Ratchaprarop,SG04,Dusit,Lat Phrao,10098,13.9800,100.9800
+1000 Thanon Phaya Thai,AY04,Phra Nakhon,Wang Thonglang,10099,13.9900,100.9900
+1010 Sukhumvit Road,CR04,Khlong Toei,Watthana,10100,13.0000,100.0000
+1020 Silom Road,LP04,Watthana,Khlong Toei,10101,13.0100,100.0100
+1030 Ratchadamri Road,RB04,Mueang Chiang Mai,Nimman,10102,13.0200,100.0200
+1040 Phetchaburi Road,SR04,Nimman,Patong,10103,13.0300,100.0300
+1050 Rama IV Road,TR04,Kathu,Hua Hin,10104,13.0400,100.0400
+1060 Charoen Krung Road,YK04,Patong,Mueang Khon Kaen,10105,13.0500,100.0500
+1070 Sathon Road,NS04,Bang Lamung,Mueang Udon Thani,10106,13.0600,100.0600
+1080 Wireless Road,PS04,Hua Hin,Mueang Nakhon Ratchasima,10107,13.0700,100.0700
+1090 Nimmanhaemin Road,SK04,Mueang Khon Kaen,Mueang Songkhla,10108,13.0800,100.0800
+1100 Patong Beach Road,YS04,Mueang Udon Thani,Hat Yai,10109,13.0900,100.0900
+1110 Beach Road,BP04,Mueang Nakhon Ratchasima,Sukhumvit,10110,13.1000,100.1000
+1120 Petchkasem Road,SP04,Mueang Songkhla,Sathon,10111,13.1100,100.1100
+1130 Mittraphap Road,KB04,Hat Yai,Bang Rak,10112,13.1200,100.1200
+1140 Nittayo Road,CN04,Sukhumvit,Pathum Wan,10113,13.1300,100.1300
+1150 Niphat Uthit Road,RN04,Sathon,Ratchathewi,10114,13.1400,100.1400
+1160 Phetkasem Road,PN04,Bang Rak,Dusit,10115,13.1500,100.1500
+1170 Thanon Phahonyothin,PC04,Pathum Wan,Phra Nakhon,10116,13.1600,100.1600
+1180 Thanon Ratchadaphisek,ST04,Ratchathewi,Bang Kapi,10117,13.1700,100.1700
+1190 Thanon Lat Phrao,UT04,Dusit,Lat Phrao,10118,13.1800,100.1800
+1200 Thanon Ramkhamhaeng,CT04,Phra Nakhon,Wang Thonglang,10119,13.1900,100.1900
+1210 Thanon Srinagarindra,BKK05,Khlong Toei,Watthana,10120,13.2000,100.2000
+1220 Thanon Sukhumvit,CM05,Watthana,Khlong Toei,10121,13.2100,100.2100
+1230 Thanon Charoen Nakhon,PK05,Mueang Chiang Mai,Nimman,10122,13.2200,100.2200
+1240 Thanon Ratchaprarop,PT05,Nimman,Patong,10123,13.2300,100.2300
+1250 Thanon Phaya Thai,HD05,Kathu,Hua Hin,10124,13.2400,100.2400
+1260 Sukhumvit Road,KK05,Patong,Mueang Khon Kaen,10125,13.2500,100.2500
+1270 Silom Road,UD05,Bang Lamung,Mueang Udon Thani,10126,13.2600,100.2600
+1280 Ratchadamri Road,NK05,Hua Hin,Mueang Nakhon Ratchasima,10127,13.2700,100.2700
+1290 Phetchaburi Road,SG05,Mueang Khon Kaen,Mueang Songkhla,10128,13.2800,100.2800
+1300 Rama IV Road,AY05,Mueang Udon Thani,Hat Yai,10129,13.2900,100.2900
+1310 Charoen Krung Road,CR05,Mueang Nakhon Ratchasima,Sukhumvit,10130,13.3000,100.3000
+1320 Sathon Road,LP05,Mueang Songkhla,Sathon,10131,13.3100,100.3100
+1330 Wireless Road,RB05,Hat Yai,Bang Rak,10132,13.3200,100.3200
+1340 Nimmanhaemin Road,SR05,Sukhumvit,Pathum Wan,10133,13.3300,100.3300
+1350 Patong Beach Road,TR05,Sathon,Ratchathewi,10134,13.3400,100.3400
+1360 Beach Road,YK05,Bang Rak,Dusit,10135,13.3500,100.3500
+1370 Petchkasem Road,NS05,Pathum Wan,Phra Nakhon,10136,13.3600,100.3600
+1380 Mittraphap Road,PS05,Ratchathewi,Bang Kapi,10137,13.3700,100.3700
+1390 Nittayo Road,SK05,Dusit,Lat Phrao,10138,13.3800,100.3800
+1400 Niphat Uthit Road,YS05,Phra Nakhon,Wang Thonglang,10139,13.3900,100.3900
+1410 Phetkasem Road,BP05,Khlong Toei,Watthana,10140,13.4000,100.4000
+1420 Thanon Phahonyothin,SP05,Watthana,Khlong Toei,10141,13.4100,100.4100
+1430 Thanon Ratchadaphisek,KB05,Mueang Chiang Mai,Nimman,10142,13.4200,100.4200
+1440 Thanon Lat Phrao,CN05,Nimman,Patong,10143,13.4300,100.4300
+1450 Thanon Ramkhamhaeng,RN05,Kathu,Hua Hin,10144,13.4400,100.4400
+1460 Thanon Srinagarindra,PN05,Patong,Mueang Khon Kaen,10145,13.4500,100.4500
+1470 Thanon Sukhumvit,PC05,Bang Lamung,Mueang Udon Thani,10146,13.4600,100.4600
+1480 Thanon Charoen Nakhon,ST05,Hua Hin,Mueang Nakhon Ratchasima,10147,13.4700,100.4700
+1490 Thanon Ratchaprarop,UT05,Mueang Khon Kaen,Mueang Songkhla,10148,13.4800,100.4800
+1500 Thanon Phaya Thai,CT05,Mueang Udon Thani,Hat Yai,10149,13.4900,100.4900
+1510 Sukhumvit Road,BKK06,Mueang Nakhon Ratchasima,Sukhumvit,10150,13.5000,100.5000
+1520 Silom Road,CM06,Mueang Songkhla,Sathon,10151,13.5100,100.5100
+1530 Ratchadamri Road,PK06,Hat Yai,Bang Rak,10152,13.5200,100.5200
+1540 Phetchaburi Road,PT06,Sukhumvit,Pathum Wan,10153,13.5300,100.5300
+1550 Rama IV Road,HD06,Sathon,Ratchathewi,10154,13.5400,100.5400
+1560 Charoen Krung Road,KK06,Bang Rak,Dusit,10155,13.5500,100.5500
+1570 Sathon Road,UD06,Pathum Wan,Phra Nakhon,10156,13.5600,100.5600
+1580 Wireless Road,NK06,Ratchathewi,Bang Kapi,10157,13.5700,100.5700
+1590 Nimmanhaemin Road,SG06,Dusit,Lat Phrao,10158,13.5800,100.5800
+1600 Patong Beach Road,AY06,Phra Nakhon,Wang Thonglang,10159,13.5900,100.5900
+1610 Beach Road,CR06,Khlong Toei,Watthana,10160,13.6000,100.6000
+1620 Petchkasem Road,LP06,Watthana,Khlong Toei,10161,13.6100,100.6100
+1630 Mittraphap Road,RB06,Mueang Chiang Mai,Nimman,10162,13.6200,100.6200
+1640 Nittayo Road,SR06,Nimman,Patong,10163,13.6300,100.6300
+1650 Niphat Uthit Road,TR06,Kathu,Hua Hin,10164,13.6400,100.6400
+1660 Phetkasem Road,YK06,Patong,Mueang Khon Kaen,10165,13.6500,100.6500
+1670 Thanon Phahonyothin,NS06,Bang Lamung,Mueang Udon Thani,10166,13.6600,100.6600
+1680 Thanon Ratchadaphisek,PS06,Hua Hin,Mueang Nakhon Ratchasima,10167,13.6700,100.6700
+1690 Thanon Lat Phrao,SK06,Mueang Khon Kaen,Mueang Songkhla,10168,13.6800,100.6800
+1700 Thanon Ramkhamhaeng,YS06,Mueang Udon Thani,Hat Yai,10169,13.6900,100.6900
+1710 Thanon Srinagarindra,BP06,Mueang Nakhon Ratchasima,Sukhumvit,10170,13.7000,100.7000
+1720 Thanon Sukhumvit,SP06,Mueang Songkhla,Sathon,10171,13.7100,100.7100
+1730 Thanon Charoen Nakhon,KB06,Hat Yai,Bang Rak,10172,13.7200,100.7200
+1740 Thanon Ratchaprarop,CN06,Sukhumvit,Pathum Wan,10173,13.7300,100.7300
+1750 Thanon Phaya Thai,RN06,Sathon,Ratchathewi,10174,13.7400,100.7400
+1760 Sukhumvit Road,PN06,Bang Rak,Dusit,10175,13.7500,100.7500
+1770 Silom Road,PC06,Pathum Wan,Phra Nakhon,10176,13.7600,100.7600
+1780 Ratchadamri Road,ST06,Ratchathewi,Bang Kapi,10177,13.7700,100.7700
+1790 Phetchaburi Road,UT06,Dusit,Lat Phrao,10178,13.7800,100.7800
+1800 Rama IV Road,CT06,Phra Nakhon,Wang Thonglang,10179,13.7900,100.7900
+1810 Charoen Krung Road,BKK07,Khlong Toei,Watthana,10180,13.8000,100.8000
+1820 Sathon Road,CM07,Watthana,Khlong Toei,10181,13.8100,100.8100
+1830 Wireless Road,PK07,Mueang Chiang Mai,Nimman,10182,13.8200,100.8200
+1840 Nimmanhaemin Road,PT07,Nimman,Patong,10183,13.8300,100.8300
+1850 Patong Beach Road,HD07,Kathu,Hua Hin,10184,13.8400,100.8400
+1860 Beach Road,KK07,Patong,Mueang Khon Kaen,10185,13.8500,100.8500
+1870 Petchkasem Road,UD07,Bang Lamung,Mueang Udon Thani,10186,13.8600,100.8600
+1880 Mittraphap Road,NK07,Hua Hin,Mueang Nakhon Ratchasima,10187,13.8700,100.8700
+1890 Nittayo Road,SG07,Mueang Khon Kaen,Mueang Songkhla,10188,13.8800,100.8800
+1900 Niphat Uthit Road,AY07,Mueang Udon Thani,Hat Yai,10189,13.8900,100.8900
+1910 Phetkasem Road,CR07,Mueang Nakhon Ratchasima,Sukhumvit,10190,13.9000,100.9000
+1920 Thanon Phahonyothin,LP07,Mueang Songkhla,Sathon,10191,13.9100,100.9100
+1930 Thanon Ratchadaphisek,RB07,Hat Yai,Bang Rak,10192,13.9200,100.9200
+1940 Thanon Lat Phrao,SR07,Sukhumvit,Pathum Wan,10193,13.9300,100.9300
+1950 Thanon Ramkhamhaeng,TR07,Sathon,Ratchathewi,10194,13.9400,100.9400
+1960 Thanon Srinagarindra,YK07,Bang Rak,Dusit,10195,13.9500,100.9500
+1970 Thanon Sukhumvit,NS07,Pathum Wan,Phra Nakhon,10196,13.9600,100.9600
+1980 Thanon Charoen Nakhon,PS07,Ratchathewi,Bang Kapi,10197,13.9700,100.9700
+1990 Thanon Ratchaprarop,SK07,Dusit,Lat Phrao,10198,13.9800,100.9800
+2000 Thanon Phaya Thai,YS07,Phra Nakhon,Wang Thonglang,10199,13.9900,100.9900
+2010 Sukhumvit Road,BP07,Khlong Toei,Watthana,10200,13.0000,100.0000
+2020 Silom Road,SP07,Watthana,Khlong Toei,10201,13.0100,100.0100
+2030 Ratchadamri Road,KB07,Mueang Chiang Mai,Nimman,10202,13.0200,100.0200
+2040 Phetchaburi Road,CN07,Nimman,Patong,10203,13.0300,100.0300
+2050 Rama IV Road,RN07,Kathu,Hua Hin,10204,13.0400,100.0400
+2060 Charoen Krung Road,PN07,Patong,Mueang Khon Kaen,10205,13.0500,100.0500
+2070 Sathon Road,PC07,Bang Lamung,Mueang Udon Thani,10206,13.0600,100.0600
+2080 Wireless Road,ST07,Hua Hin,Mueang Nakhon Ratchasima,10207,13.0700,100.0700
+2090 Nimmanhaemin Road,UT07,Mueang Khon Kaen,Mueang Songkhla,10208,13.0800,100.0800
+2100 Patong Beach Road,CT07,Mueang Udon Thani,Hat Yai,10209,13.0900,100.0900
+2110 Beach Road,BKK08,Mueang Nakhon Ratchasima,Sukhumvit,10210,13.1000,100.1000
+2120 Petchkasem Road,CM08,Mueang Songkhla,Sathon,10211,13.1100,100.1100
+2130 Mittraphap Road,PK08,Hat Yai,Bang Rak,10212,13.1200,100.1200
+2140 Nittayo Road,PT08,Sukhumvit,Pathum Wan,10213,13.1300,100.1300
+2150 Niphat Uthit Road,HD08,Sathon,Ratchathewi,10214,13.1400,100.1400
+2160 Phetkasem Road,KK08,Bang Rak,Dusit,10215,13.1500,100.1500
+2170 Thanon Phahonyothin,UD08,Pathum Wan,Phra Nakhon,10216,13.1600,100.1600
+2180 Thanon Ratchadaphisek,NK08,Ratchathewi,Bang Kapi,10217,13.1700,100.1700
+2190 Thanon Lat Phrao,SG08,Dusit,Lat Phrao,10218,13.1800,100.1800
+2200 Thanon Ramkhamhaeng,AY08,Phra Nakhon,Wang Thonglang,10219,13.1900,100.1900
+2210 Thanon Srinagarindra,CR08,Khlong Toei,Watthana,10220,13.2000,100.2000
+2220 Thanon Sukhumvit,LP08,Watthana,Khlong Toei,10221,13.2100,100.2100
+2230 Thanon Charoen Nakhon,RB08,Mueang Chiang Mai,Nimman,10222,13.2200,100.2200
+2240 Thanon Ratchaprarop,SR08,Nimman,Patong,10223,13.2300,100.2300
+2250 Thanon Phaya Thai,TR08,Kathu,Hua Hin,10224,13.2400,100.2400
+2260 Sukhumvit Road,YK08,Patong,Mueang Khon Kaen,10225,13.2500,100.2500
+2270 Silom Road,NS08,Bang Lamung,Mueang Udon Thani,10226,13.2600,100.2600
+2280 Ratchadamri Road,PS08,Hua Hin,Mueang Nakhon Ratchasima,10227,13.2700,100.2700
+2290 Phetchaburi Road,SK08,Mueang Khon Kaen,Mueang Songkhla,10228,13.2800,100.2800
+2300 Rama IV Road,YS08,Mueang Udon Thani,Hat Yai,10229,13.2900,100.2900
+2310 Charoen Krung Road,BP08,Mueang Nakhon Ratchasima,Sukhumvit,10230,13.3000,100.3000
+2320 Sathon Road,SP08,Mueang Songkhla,Sathon,10231,13.3100,100.3100
+2330 Wireless Road,KB08,Hat Yai,Bang Rak,10232,13.3200,100.3200
+2340 Nimmanhaemin Road,CN08,Sukhumvit,Pathum Wan,10233,13.3300,100.3300
+2350 Patong Beach Road,RN08,Sathon,Ratchathewi,10234,13.3400,100.3400
+2360 Beach Road,PN08,Bang Rak,Dusit,10235,13.3500,100.3500
+2370 Petchkasem Road,PC08,Pathum Wan,Phra Nakhon,10236,13.3600,100.3600
+2380 Mittraphap Road,ST08,Ratchathewi,Bang Kapi,10237,13.3700,100.3700
+2390 Nittayo Road,UT08,Dusit,Lat Phrao,10238,13.3800,100.3800
+2400 Niphat Uthit Road,CT08,Phra Nakhon,Wang Thonglang,10239,13.3900,100.3900
+2410 Phetkasem Road,BKK09,Khlong Toei,Watthana,10240,13.4000,100.4000
+2420 Thanon Phahonyothin,CM09,Watthana,Khlong Toei,10241,13.4100,100.4100
+2430 Thanon Ratchadaphisek,PK09,Mueang Chiang Mai,Nimman,10242,13.4200,100.4200
+2440 Thanon Lat Phrao,PT09,Nimman,Patong,10243,13.4300,100.4300
+2450 Thanon Ramkhamhaeng,HD09,Kathu,Hua Hin,10244,13.4400,100.4400
+2460 Thanon Srinagarindra,KK09,Patong,Mueang Khon Kaen,10245,13.4500,100.4500
+2470 Thanon Sukhumvit,UD09,Bang Lamung,Mueang Udon Thani,10246,13.4600,100.4600
+2480 Thanon Charoen Nakhon,NK09,Hua Hin,Mueang Nakhon Ratchasima,10247,13.4700,100.4700
+2490 Thanon Ratchaprarop,SG09,Mueang Khon Kaen,Mueang Songkhla,10248,13.4800,100.4800
+2500 Thanon Phaya Thai,AY09,Mueang Udon Thani,Hat Yai,10249,13.4900,100.4900
+2510 Sukhumvit Road,CR09,Mueang Nakhon Ratchasima,Sukhumvit,10250,13.5000,100.5000
+2520 Silom Road,LP09,Mueang Songkhla,Sathon,10251,13.5100,100.5100
+2530 Ratchadamri Road,RB09,Hat Yai,Bang Rak,10252,13.5200,100.5200
+2540 Phetchaburi Road,SR09,Sukhumvit,Pathum Wan,10253,13.5300,100.5300
+2550 Rama IV Road,TR09,Sathon,Ratchathewi,10254,13.5400,100.5400
+2560 Charoen Krung Road,YK09,Bang Rak,Dusit,10255,13.5500,100.5500
+2570 Sathon Road,NS09,Pathum Wan,Phra Nakhon,10256,13.5600,100.5600
+2580 Wireless Road,PS09,Ratchathewi,Bang Kapi,10257,13.5700,100.5700
+2590 Nimmanhaemin Road,SK09,Dusit,Lat Phrao,10258,13.5800,100.5800
+2600 Patong Beach Road,YS09,Phra Nakhon,Wang Thonglang,10259,13.5900,100.5900
+2610 Beach Road,BP09,Khlong Toei,Watthana,10260,13.6000,100.6000
+2620 Petchkasem Road,SP09,Watthana,Khlong Toei,10261,13.6100,100.6100
+2630 Mittraphap Road,KB09,Mueang Chiang Mai,Nimman,10262,13.6200,100.6200
+2640 Nittayo Road,CN09,Nimman,Patong,10263,13.6300,100.6300
+2650 Niphat Uthit Road,RN09,Kathu,Hua Hin,10264,13.6400,100.6400
+2660 Phetkasem Road,PN09,Patong,Mueang Khon Kaen,10265,13.6500,100.6500
+2670 Thanon Phahonyothin,PC09,Bang Lamung,Mueang Udon Thani,10266,13.6600,100.6600
+2680 Thanon Ratchadaphisek,ST09,Hua Hin,Mueang Nakhon Ratchasima,10267,13.6700,100.6700
+2690 Thanon Lat Phrao,UT09,Mueang Khon Kaen,Mueang Songkhla,10268,13.6800,100.6800
+2700 Thanon Ramkhamhaeng,CT09,Mueang Udon Thani,Hat Yai,10269,13.6900,100.6900
+2710 Thanon Srinagarindra,BKK10,Mueang Nakhon Ratchasima,Sukhumvit,10270,13.7000,100.7000
+2720 Thanon Sukhumvit,CM10,Mueang Songkhla,Sathon,10271,13.7100,100.7100
+2730 Thanon Charoen Nakhon,PK10,Hat Yai,Bang Rak,10272,13.7200,100.7200
+2740 Thanon Ratchaprarop,PT10,Sukhumvit,Pathum Wan,10273,13.7300,100.7300
+2750 Thanon Phaya Thai,HD10,Sathon,Ratchathewi,10274,13.7400,100.7400
+2760 Sukhumvit Road,KK10,Bang Rak,Dusit,10275,13.7500,100.7500
+2770 Silom Road,UD10,Pathum Wan,Phra Nakhon,10276,13.7600,100.7600
+2780 Ratchadamri Road,NK10,Ratchathewi,Bang Kapi,10277,13.7700,100.7700
+2790 Phetchaburi Road,SG10,Dusit,Lat Phrao,10278,13.7800,100.7800
+2800 Rama IV Road,AY10,Phra Nakhon,Wang Thonglang,10279,13.7900,100.7900
+2810 Charoen Krung Road,CR10,Khlong Toei,Watthana,10280,13.8000,100.8000
+2820 Sathon Road,LP10,Watthana,Khlong Toei,10281,13.8100,100.8100
+2830 Wireless Road,RB10,Mueang Chiang Mai,Nimman,10282,13.8200,100.8200
+2840 Nimmanhaemin Road,SR10,Nimman,Patong,10283,13.8300,100.8300
+2850 Patong Beach Road,TR10,Kathu,Hua Hin,10284,13.8400,100.8400
+2860 Beach Road,YK10,Patong,Mueang Khon Kaen,10285,13.8500,100.8500
+2870 Petchkasem Road,NS10,Bang Lamung,Mueang Udon Thani,10286,13.8600,100.8600
+2880 Mittraphap Road,PS10,Hua Hin,Mueang Nakhon Ratchasima,10287,13.8700,100.8700
+2890 Nittayo Road,SK10,Mueang Khon Kaen,Mueang Songkhla,10288,13.8800,100.8800
+2900 Niphat Uthit Road,YS10,Mueang Udon Thani,Hat Yai,10289,13.8900,100.8900
+2910 Phetkasem Road,BP10,Mueang Nakhon Ratchasima,Sukhumvit,10290,13.9000,100.9000
+2920 Thanon Phahonyothin,SP10,Mueang Songkhla,Sathon,10291,13.9100,100.9100
+2930 Thanon Ratchadaphisek,KB10,Hat Yai,Bang Rak,10292,13.9200,100.9200
+2940 Thanon Lat Phrao,CN10,Sukhumvit,Pathum Wan,10293,13.9300,100.9300
+2950 Thanon Ramkhamhaeng,RN10,Sathon,Ratchathewi,10294,13.9400,100.9400
+2960 Thanon Srinagarindra,PN10,Bang Rak,Dusit,10295,13.9500,100.9500
+2970 Thanon Sukhumvit,PC10,Pathum Wan,Phra Nakhon,10296,13.9600,100.9600
+2980 Thanon Charoen Nakhon,ST10,Ratchathewi,Bang Kapi,10297,13.9700,100.9700
+2990 Thanon Ratchaprarop,UT10,Dusit,Lat Phrao,10298,13.9800,100.9800
+3000 Thanon Phaya Thai,CT10,Phra Nakhon,Wang Thonglang,10299,13.9900,100.9900
