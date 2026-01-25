@@ -62,7 +62,11 @@ RealEstate/
 - **Frontend** - React Application
 
 ## Quick Start
-
+1. Start Docker in your computer
+2. cd `realestate` Project
+4. Run Frontend with Backend with command `docker-compose up -d --build`
+5. Frontend open `http://localhost:3000`
+6. Backend open `http://localhost:5000/api/docs`
 ### Backend Setup
 
 1. Navigate to backend directory:
