@@ -1,7 +1,4 @@
 # Real Estate Application
-
-แอปพลิเคชันอสังหาริมทรัพย์แบบ Full-stack พัฒนาด้วย React และ NestJS
-
 ## โครงสร้างโปรเจกต์
 
 ```
