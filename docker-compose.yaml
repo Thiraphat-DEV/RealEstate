@@ -78,10 +78,10 @@ services:
       - FRONTEND_URL=http://localhost:3000
       - JWT_SECRET=
       - KEYCLOAK_BASE_URL=http://keycloak:8080
-      - KEYCLOAK_REALM=realestate
-      - KEYCLOAK_CLIENT_ID=realestate-client
+      - KEYCLOAK_REALM=
+      - KEYCLOAK_CLIENT_ID=
       - KEYCLOAK_CLIENT_SECRET=
-      - KEYCLOAK_CALLBACK_URL=http://localhost:5000/api/auth/keycloak/callback
+      - KEYCLOAK_CALLBACK_URL=
     ports:
       - "5000:5000"
     depends_on:
