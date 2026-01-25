@@ -1,12 +1,13 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, memo } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../features/auth/context/AuthContext'
+import { Spinner } from '../ui'
 
 interface HeaderProps {
   title?: string
 }
 
-export const Header = ({ title = 'Real Estate' }: HeaderProps) => {
+export const Header = memo(({ title = 'Real Estate' }: HeaderProps) => {
   const { user, isAuthenticated, isLoading, logout } = useAuth()
   const navigate = useNavigate()
   const [showDropdown, setShowDropdown] = useState(false)
@@ -35,8 +36,13 @@ export const Header = ({ title = 'Real Estate' }: HeaderProps) => {
     navigate('/')
   }
 
+  const handleFavourites = async () => {
+    setShowDropdown(false)
+    navigate('/favourites')
+  }
+
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 transition-shadow duration-200">
       {/* Main Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -52,22 +58,12 @@ export const Header = ({ title = 'Real Estate' }: HeaderProps) => {
             </div>
           </Link>
 
-          {/* Search Bar in Header */}
-          <div className="hidden lg:flex flex-1 max-w-2xl mx-8">
-            <input
-              type="text"
-              placeholder="Search location, property name..."
-              className="w-full px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
-            />
-            <button className="px-6 py-2 bg-gold-600 text-white rounded-r-lg hover:bg-gold-700 transition-colors">
-              🔍
-            </button>
-          </div>
-
           {/* Right Actions */}
           <div className="flex items-center gap-3">
             {isLoading ? (
-              <div className="px-4 py-2 text-sm text-gray-500">Loading...</div>
+              <div className="px-4 py-2">
+                <Spinner size="sm" />
+              </div>
             ) : isAuthenticated && user ? (
               <div className="relative" ref={dropdownRef}>
                 <button
@@ -98,11 +94,21 @@ export const Header = ({ title = 'Real Estate' }: HeaderProps) => {
                       <p className="text-sm font-semibold text-gray-900">{user.name || user.email}</p>
                       <p className="text-xs text-gray-500">{user.email}</p>
                     </div>
-                    <div className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">
-                        <Link to="/favourites">
-                          Favourites
-                        </Link>
-                    </div>
+                    <button
+                      onClick={handleFavourites}
+                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    >
+                      Favourites
+                    </button>
+                    <button
+                      onClick={() => {
+                        setShowDropdown(false)
+                        navigate('/view-history')
+                      }}
+                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    >
+                      View History
+                    </button>
                     <button
                       onClick={handleLogout}
                       className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
@@ -125,6 +131,8 @@ export const Header = ({ title = 'Real Estate' }: HeaderProps) => {
       </div>
     </header>
   )
-}
+})
+
+Header.displayName = 'Header'
 
 export default Header

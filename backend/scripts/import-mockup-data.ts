@@ -10,6 +10,7 @@ import { MasterCityEntity } from '../src/modules/schema/master/ms_city.entity';
 import { MasterAddressEntity } from '../src/modules/schema/master/ms_address.entity';
 import { MasterPropertiesStatusEntity } from '../src/modules/schema/master/ms_properties_status.entity';
 import { MasterPropertiesTypeEntity } from '../src/modules/schema/master/ms_properties_type.entity';
+import { MasterPropertiesEntity } from '../src/modules/schema/master/ms_properties.entity';
 
 interface CityRow {
   code: string;
@@ -37,6 +38,20 @@ interface AddressRow {
   postalCode?: string;
   latitude?: string;
   longitude?: string;
+}
+
+interface PropertyRow {
+  title: string;
+  price: string;
+  location: string;
+  description?: string;
+  bedrooms?: string;
+  bathrooms?: string;
+  area?: string;
+  propertyTypeCode: string;
+  statusCode: string;
+  address?: string;
+  images?: string;
 }
 
 async function readCSV<T>(filePath: string): Promise<T[]> {
@@ -214,6 +229,182 @@ async function importAddresses(
   console.log(`✅ Imported ${imported} addresses\n`);
 }
 
+async function importProperties(
+  propertiesModel: Model<MasterPropertiesEntity>,
+  typeModel: Model<MasterPropertiesTypeEntity>,
+  statusModel: Model<MasterPropertiesStatusEntity>,
+  addressModel: Model<MasterAddressEntity>,
+): Promise<void> {
+  console.log('📥 Importing properties...');
+  const csvPath = path.join(process.cwd(), 'mockup-data/ms_properties.csv');
+  const rows = await readCSV<PropertyRow>(csvPath);
+
+  // Get all types and create code to ID map
+  const types = await typeModel.find().exec();
+  const typeCodeToIdMap = new Map<string, Types.ObjectId>();
+  types.forEach((type) => {
+    typeCodeToIdMap.set(type.code, type._id as Types.ObjectId);
+  });
+
+  // Get all statuses and create code to ID map
+  const statuses = await statusModel.find().exec();
+  const statusCodeToIdMap = new Map<string, Types.ObjectId>();
+  statuses.forEach((status) => {
+    statusCodeToIdMap.set(status.code, status._id as Types.ObjectId);
+  });
+
+  let imported = 0;
+  for (const row of rows) {
+    try {
+      // Get property type ID
+      const propertyTypeId = typeCodeToIdMap.get(row.propertyTypeCode);
+      if (!propertyTypeId) {
+        console.error(
+          `  ❌ Property type code ${row.propertyTypeCode} not found, skipping property...`,
+        );
+        continue;
+      }
+
+      // Get status ID
+      const statusId = statusCodeToIdMap.get(row.statusCode);
+      if (!statusId) {
+        console.error(
+          `  ❌ Status code ${row.statusCode} not found, skipping property...`,
+        );
+        continue;
+      }
+
+      // Get address ID if address is provided
+      let addressId: Types.ObjectId | undefined;
+      if (row.address) {
+        const address = await addressModel
+          .findOne({ address: row.address })
+          .exec();
+        if (address) {
+          addressId = address._id as Types.ObjectId;
+        } else {
+          console.warn(
+            `  ⚠️  Address "${row.address}" not found, creating property without address...`,
+          );
+        }
+      }
+
+      // Parse images array
+      const images = row.images
+        ? row.images.split(',').map((img) => img.trim())
+        : [];
+
+      // Check if property already exists (by title)
+      const existing = await propertiesModel
+        .findOne({ title: row.title })
+        .exec();
+      if (existing) {
+        console.log(
+          `  ⚠️  Property "${row.title}" already exists, skipping...`,
+        );
+        continue;
+      }
+
+      const property = new propertiesModel({
+        title: row.title,
+        price: parseFloat(row.price),
+        location: row.location,
+        description: row.description || undefined,
+        bedrooms: row.bedrooms ? parseInt(row.bedrooms) : undefined,
+        bathrooms: row.bathrooms ? parseInt(row.bathrooms) : undefined,
+        area: row.area ? parseFloat(row.area) : undefined,
+        propertyType: propertyTypeId,
+        status: statusId,
+        address: addressId,
+        images: images.length > 0 ? images : undefined,
+      });
+
+      await property.save();
+      imported++;
+      console.log(`  ✅ Created property: ${row.title}`);
+    } catch (error: any) {
+      console.error(
+        `  ❌ Error creating property "${row.title}":`,
+        error.message,
+      );
+    }
+  }
+
+  console.log(`✅ Imported ${imported} properties\n`);
+}
+
+async function clearProperties(
+  propertiesModel: Model<MasterPropertiesEntity>,
+): Promise<void> {
+  console.log('🗑️  Clearing existing properties...\n');
+
+  try {
+    const propertiesCount = await propertiesModel.countDocuments().exec();
+    if (propertiesCount > 0) {
+      await propertiesModel.deleteMany({}).exec();
+      console.log(`  ✅ Deleted ${propertiesCount} properties\n`);
+    } else {
+      console.log('  ℹ️  No properties to delete\n');
+    }
+  } catch (error: any) {
+    console.error('❌ Error clearing properties:', error.message);
+    throw error;
+  }
+}
+
+async function clearAllData(
+  propertiesModel: Model<MasterPropertiesEntity>,
+  addressModel: Model<MasterAddressEntity>,
+  typeModel: Model<MasterPropertiesTypeEntity>,
+  statusModel: Model<MasterPropertiesStatusEntity>,
+  cityModel: Model<MasterCityEntity>,
+): Promise<void> {
+  console.log('🗑️  Clearing existing data...\n');
+
+  try {
+    // Delete in reverse order of dependencies
+    // 1. Properties (depends on address, type, status)
+    const propertiesCount = await propertiesModel.countDocuments().exec();
+    if (propertiesCount > 0) {
+      await propertiesModel.deleteMany({}).exec();
+      console.log(`  ✅ Deleted ${propertiesCount} properties`);
+    }
+
+    // 2. Addresses (depends on city)
+    const addressesCount = await addressModel.countDocuments().exec();
+    if (addressesCount > 0) {
+      await addressModel.deleteMany({}).exec();
+      console.log(`  ✅ Deleted ${addressesCount} addresses`);
+    }
+
+    // 3. Types
+    const typesCount = await typeModel.countDocuments().exec();
+    if (typesCount > 0) {
+      await typeModel.deleteMany({}).exec();
+      console.log(`  ✅ Deleted ${typesCount} property types`);
+    }
+
+    // 4. Statuses
+    const statusesCount = await statusModel.countDocuments().exec();
+    if (statusesCount > 0) {
+      await statusModel.deleteMany({}).exec();
+      console.log(`  ✅ Deleted ${statusesCount} property statuses`);
+    }
+
+    // 5. Cities (no dependencies)
+    const citiesCount = await cityModel.countDocuments().exec();
+    if (citiesCount > 0) {
+      await cityModel.deleteMany({}).exec();
+      console.log(`  ✅ Deleted ${citiesCount} cities`);
+    }
+
+    console.log('✅ All existing data cleared\n');
+  } catch (error: any) {
+    console.error('❌ Error clearing data:', error.message);
+    throw error;
+  }
+}
+
 async function bootstrap() {
   console.log('🚀 Starting mockup data import...\n');
 
@@ -233,12 +424,32 @@ async function bootstrap() {
     const typeModel = app.get<Model<MasterPropertiesTypeEntity>>(
       getModelToken(MasterPropertiesTypeEntity.name),
     );
+    const propertiesModel = app.get<Model<MasterPropertiesEntity>>(
+      getModelToken(MasterPropertiesEntity.name),
+    );
 
-    // Import in order: cities first (for address references), then statuses, types, and addresses
-    const cityCodeToIdMap = await importCities(cityModel);
-    await importStatuses(statusModel);
-    await importTypes(typeModel);
-    await importAddresses(addressModel, cityCodeToIdMap);
+    // Check if master data exists, if not import them first
+    const existingCities = await cityModel.countDocuments().exec();
+    const existingStatuses = await statusModel.countDocuments().exec();
+    const existingTypes = await typeModel.countDocuments().exec();
+    const existingAddresses = await addressModel.countDocuments().exec();
+
+    if (
+      existingCities === 0 ||
+      existingStatuses === 0 ||
+      existingTypes === 0 ||
+      existingAddresses === 0
+    ) {
+      // Import master data first if missing
+      const cityCodeToIdMap = await importCities(cityModel);
+      await importStatuses(statusModel);
+      await importTypes(typeModel);
+      await importAddresses(addressModel, cityCodeToIdMap);
+    }
+
+    // Clear only properties and import new ones
+    await clearProperties(propertiesModel);
+    await importProperties(propertiesModel, typeModel, statusModel, addressModel);
 
     console.log('✅ All mockup data imported successfully!');
   } catch (error) {

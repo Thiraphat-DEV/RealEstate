@@ -19,24 +19,15 @@ export const handleApiError = (error: unknown): ApiError => {
     if (axiosError.response) {
       const { status, data } = axiosError.response
       
-      // Debug logging (remove in production)
-      if (process.env.NODE_ENV === 'development') {
-        console.log('API Error Response:', { status, data })
-      }
-      
-      // Extract error message
       let message = 'An error occurred'
       
-      // NestJS error format: { statusCode, message, error }
       if (data?.message) {
-        // Handle both string and array of strings
         message = Array.isArray(data.message) 
           ? data.message.join(', ') 
           : data.message
       } else if (data?.error) {
         message = data.error
       } else {
-        // Fallback to status-based messages
         switch (status) {
           case 400:
             message = 'Bad request. Please check your input'

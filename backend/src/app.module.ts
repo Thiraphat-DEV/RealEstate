@@ -4,6 +4,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './modules/auth/auth.module';
 import { PropertiesModule } from './modules/properties/properties.module';
+import { FavouritesModule } from './modules/favourites/favourites.module';
+import { MasterModule } from './modules/master/master.module';
+import { InquiriesModule } from './modules/inquiries/inquiries.module';
+import { ReviewsModule } from './modules/reviews/reviews.module';
+import { ViewHistoryModule } from './modules/view-history/view-history.module';
 import { DatabaseModule } from './database/database.module';
 import { appConfig, authConfig, databaseConfig } from './config';
 
@@ -16,7 +21,12 @@ import { appConfig, authConfig, databaseConfig } from './config';
     }),
     DatabaseModule,
     AuthModule,
-    PropertiesModule
+    PropertiesModule,
+    FavouritesModule,
+    MasterModule,
+    InquiriesModule,
+    ReviewsModule,
+    ViewHistoryModule
   ],
   controllers: [AppController],
   providers: [AppService]

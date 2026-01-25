@@ -1,172 +1,286 @@
-import { useState } from 'react'
-import { locationService } from '../../../services/locationService'
+import { useEffect, useState } from 'react'
+import {
+  masterService,
+  type PropertyTypeMaster,
+  type CityMaster,
+} from '../../../services/masterService'
+import type { PropertyFilterState } from '../types'
 
 interface PropertyFiltersProps {
-  onFilterChange?: (filters: FilterState) => void
+  value?: PropertyFilterState
+  onFilterChange?: (filters: PropertyFilterState) => void
 }
 
-export interface FilterState {
-  propertyType: string
-  location: string
-  priceMin: string
-  priceMax: string
-  bedrooms: string
-  bathrooms: string
-  areaMin: string
-  areaMax: string
-}
-
-export const PropertyFilters = ({ onFilterChange }: PropertyFiltersProps) => {
-  const [filters, setFilters] = useState<FilterState>({
+export const PropertyFilters = ({ value, onFilterChange }: PropertyFiltersProps) => {
+  const [internalFilters, setInternalFilters] = useState<PropertyFilterState>({
     propertyType: '',
     location: '',
+    address: '',
     priceMin: '',
     priceMax: '',
     bedrooms: '',
     bathrooms: '',
     areaMin: '',
     areaMax: '',
+    search: '',
   })
 
-  const locations = locationService.getCountries()
-  const propertyTypes = ['Condo', 'House', 'Villa', 'Townhouse', 'Land']
+  const filters = value ?? internalFilters
 
-  const handleFilterChange = (key: keyof FilterState, value: string) => {
-    const newFilters = { ...filters, [key]: value }
-    setFilters(newFilters)
-    onFilterChange?.(newFilters)
+  const [locations, setLocations] = useState<CityMaster[]>([])
+  const [propertyTypes, setPropertyTypes] = useState<PropertyTypeMaster[]>([])
+  const [bedroomOptions, setBedroomOptions] = useState<number[]>([])
+  
+  const [localFilters, setLocalFilters] = useState<PropertyFilterState>({
+    propertyType: '',
+    location: '',
+    address: '',
+    priceMin: '',
+    priceMax: '',
+    bedrooms: '',
+    bathrooms: '',
+    areaMin: '',
+    areaMax: '',
+    search: '',
+  })
+
+  // Sync localFilters with value when value changes (for controlled mode)
+  useEffect(() => {
+    if (value) {
+      setInternalFilters(value)
+      setLocalFilters(value)
+    }
+  }, [value])
+
+  useEffect(() => {
+    let isMounted = true
+
+    const loadMasters = async () => {
+      try {
+        const [cities, types, bedrooms] = await Promise.all([
+          masterService.getCities(),
+          masterService.getPropertyTypes(),
+          masterService.getBedrooms(),
+        ])
+
+        if (!isMounted) return
+
+        setLocations(cities)
+        setPropertyTypes(types)
+        setBedroomOptions(bedrooms)
+      } catch (error) {
+      }
+    }
+
+    loadMasters()
+
+    return () => {
+      isMounted = false
+    }
+  }, [])
+
+  const handleLocalChange = (key: keyof PropertyFilterState, value: string) => {
+    setLocalFilters(prev => ({
+      ...prev,
+      [key]: value,
+    }))
+  }
+
+  const handleSubmitAll = (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    const filtersToSubmit: PropertyFilterState = {
+      ...localFilters,
+      search: localFilters.search.trim(),
+    }
+    
+    if (!value) {
+      setInternalFilters(filtersToSubmit)
+    }
+    
+    onFilterChange?.(filtersToSubmit)
   }
 
   const clearFilters = () => {
-    const emptyFilters: FilterState = {
+    const emptyFilters: PropertyFilterState = {
       propertyType: '',
       location: '',
+      address: '',
       priceMin: '',
       priceMax: '',
       bedrooms: '',
       bathrooms: '',
       areaMin: '',
       areaMax: '',
+      search: '',
     }
-    setFilters(emptyFilters)
+    setLocalFilters(emptyFilters)
+    if (!value) {
+      setInternalFilters(emptyFilters)
+    }
     onFilterChange?.(emptyFilters)
   }
 
+  useEffect(() => {} , [localFilters, filters, locations, propertyTypes, bedroomOptions])
+
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 sticky top-20">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-semibold text-gray-900">Filters</h3>
-        <button
-          onClick={clearFilters}
-          className="text-sm text-gold-600 hover:text-gold-700 font-medium"
-        >
-          Clear All
-        </button>
+    <div className="bg-white rounded-lg shadow-md p-6">
+      <div className="mb-6">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-lg font-semibold text-gray-900">ตัวกรอง</h3>
+          <button
+            onClick={clearFilters}
+            type="button"
+            className="text-sm text-gold-600 hover:text-gold-700 font-medium"
+          >
+            เคลียร์ตัวกรอง
+          </button>
+        </div>
       </div>
 
-      <div className="space-y-6">
-        {/* Property Type */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Property Type
-          </label>
-          <select
-            value={filters.propertyType}
-            onChange={(e) => handleFilterChange('propertyType', e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
-          >
-            <option value="">All Types</option>
-            {propertyTypes.map((type) => (
-              <option key={type} value={type}>
-                {type}
-              </option>
-            ))}
-          </select>
-        </div>
+      <form onSubmit={handleSubmitAll}>
+        <div className="space-y-6">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              ประเภท
+            </label>
+            <select
+              value={localFilters.propertyType}
+              onChange={(e) => handleLocalChange('propertyType', e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
+            >
+              <option value="">ทุกประเภท</option>
+              {propertyTypes.map((type) => (
+                <option key={type.id} value={type.id}>
+                  {type.name}
+                </option>
+              ))}
+            </select>
+          </div>
 
-        {/* Location */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Location
-          </label>
-          <select
-            value={filters.location}
-            onChange={(e) => handleFilterChange('location', e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
-          >
-            <option value="">All Locations</option>
-            {locations.map((loc) => (
-              <option key={loc} value={loc}>
-                {loc}
-              </option>
-            ))}
-          </select>
-        </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              สถานที่
+            </label>
+            <select
+              value={localFilters.location}
+              onChange={(e) => handleLocalChange('location', e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
+            >
+              <option value="">ทุกสถานที่</option>
+              {locations.map((city) => (
+                <option key={city.id} value={city.id}>
+                  {city.name} {city.province ? `(${city.province})` : ''}
+                </option>
+              ))}
+            </select>
+          </div>
 
-        {/* Price Range */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Price Range (฿)
-          </label>
-          <div className="grid grid-cols-2 gap-2">
+          {/* Search */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Search
+            </label>
             <input
-              type="number"
-              placeholder="Min"
-              value={filters.priceMin}
-              onChange={(e) => handleFilterChange('priceMin', e.target.value)}
-              className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
+              type="text"
+              placeholder="Search by title, location, or master data..."
+              value={localFilters.search}
+              onChange={(e) => handleLocalChange('search', e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
             />
-            <input
-              type="number"
-              placeholder="Max"
-              value={filters.priceMax}
-              onChange={(e) => handleFilterChange('priceMax', e.target.value)}
-              className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
-            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              ช่วงราคา (฿)
+            </label>
+            <div className="grid grid-cols-2 gap-2">
+              <input
+                type="number"
+                placeholder="ต่ำสุด"
+                value={localFilters.priceMin}
+                onChange={(e) => handleLocalChange('priceMin', e.target.value)}
+                className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
+              />
+              <input
+                type="number"
+                placeholder="สูงสุด"
+                value={localFilters.priceMax}
+                onChange={(e) => handleLocalChange('priceMax', e.target.value)}
+                className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
+              />
+            </div>
+          </div>
+
+          {/* Bedrooms */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              ห้องนอน
+            </label>
+            <select
+              value={localFilters.bedrooms}
+              onChange={(e) => handleLocalChange('bedrooms', e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
+            >
+              <option value="">-</option>
+              {bedroomOptions.map((value) => (
+                <option key={value} value={value.toString()}>
+                  {value}+
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              ห้องน้ำ
+            </label>
+            <select
+              value={localFilters.bathrooms}
+              onChange={(e) => handleLocalChange('bathrooms', e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
+            >
+              <option value="">-</option>
+              {bedroomOptions.map((value) => (
+                <option key={value} value={value.toString()}>
+                  {value}+
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              พื้นที่ (ตารางเมตร)
+            </label>
+            <div className="grid grid-cols-2 gap-2">
+              <input
+                type="number"
+                placeholder="ต่ำสุด"
+                value={localFilters.areaMin}
+                onChange={(e) => handleLocalChange('areaMin', e.target.value)}
+                className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
+              />
+              <input
+                type="number"
+                placeholder="สูงสุด"
+                value={localFilters.areaMax}
+                onChange={(e) => handleLocalChange('areaMax', e.target.value)}
+                className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
+              />
+            </div>
           </div>
         </div>
 
-        {/* Bedrooms */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Bedrooms
-          </label>
-          <select
-            value={filters.bedrooms}
-            onChange={(e) => handleFilterChange('bedrooms', e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
+        <div className="mt-6 pt-6 border-t border-gray-200">
+          <button
+            type="submit"
+            className="w-full px-6 py-3 bg-gold-600 text-white rounded-lg hover:bg-gold-700 transition-colors font-medium text-base"
           >
-            <option value="">Any</option>
-            <option value="1">1+</option>
-            <option value="2">2+</option>
-            <option value="3">3+</option>
-            <option value="4">4+</option>
-          </select>
+            ใช้ตัวกรอง
+          </button>
         </div>
-
-        {/* Area */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Area (sqm)
-          </label>
-          <div className="grid grid-cols-2 gap-2">
-            <input
-              type="number"
-              placeholder="Min"
-              value={filters.areaMin}
-              onChange={(e) => handleFilterChange('areaMin', e.target.value)}
-              className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
-            />
-            <input
-              type="number"
-              placeholder="Max"
-              value={filters.areaMax}
-              onChange={(e) => handleFilterChange('areaMax', e.target.value)}
-              className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
-            />
-          </div>
-        </div>
-      </div>
+      </form>
     </div>
   )
 }

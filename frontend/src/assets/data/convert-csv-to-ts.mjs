@@ -73,12 +73,12 @@ const props = lines.map((line, idx) => {
   }
   const location = locationParts.join(', ');
   
-  // Generate area (sqm) based on bedrooms and rooms
+  // Generate area (ตารางเมตร) based on bedrooms and rooms
   // Formula: base area + (bedrooms * 20) + (rooms * 15) + random variation
   const baseArea = 30; // Minimum studio size
   const bedroomArea = bedrooms ? bedrooms * 20 : 0;
   const roomArea = rooms ? rooms * 15 : 0;
-  const randomVariation = Math.floor(Math.random() * 30) + 1; // 1-30 sqm variation
+  const randomVariation = Math.floor(Math.random() * 30) + 1; // 1-30 ตารางเมตร variation
   const area = baseArea + bedroomArea + roomArea + randomVariation;
   
   // Generate 4 image URLs for each property

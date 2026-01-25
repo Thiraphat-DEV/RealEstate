@@ -67,7 +67,7 @@ const generateMockProperties = (): Property[] => {
 
     const bedrooms = index % 4 === 0 ? 1 : index % 4 === 1 ? 2 : index % 4 === 2 ? 3 : 4
     const bathrooms = bedrooms === 1 ? 1 : bedrooms === 2 ? 2 : bedrooms + 1
-    const area = bedrooms * 35 + Math.floor(Math.random() * 30) // 35-65 sqm per bedroom
+    const area = bedrooms * 35 + Math.floor(Math.random() * 30) // 35-65 ตารางเมตร per bedroom
 
     // Generate 4 placeholder images using Unsplash or similar service
     // Using placeholder.com for now, can be replaced with actual image URLs

@@ -27,22 +27,15 @@ export const SignupPage = () => {
     }
   }, [])
 
-  // Navigate when success popup is shown
   useEffect(() => {
-    console.log('SignupPage: useEffect triggered, showSuccessPopup:', showSuccessPopup, 'isMounted:', isMountedRef.current)
     if (showSuccessPopup) {
-      console.log('SignupPage: Setting timeout for navigation...')
       timeoutRef.current = setTimeout(() => {
-        console.log('SignupPage: Timeout fired, navigating to login...', 'isMounted:', isMountedRef.current)
         if (isMountedRef.current) {
           navigate('/login', { replace: true })
-        } else {
-          console.warn('SignupPage: Component unmounted, skipping navigation')
         }
-      }, 3000) // Show popup for 3 seconds before redirect
+      }, 3000)
       
       return () => {
-        console.log('SignupPage: Cleanup timeout')
         if (timeoutRef.current) {
           clearTimeout(timeoutRef.current)
         }
@@ -83,7 +76,6 @@ export const SignupPage = () => {
     setError('')
     setShowSuccessPopup(false)
 
-    // Client-side validation
     const validationError = validateForm()
     if (validationError) {
       setError(validationError)
@@ -93,35 +85,24 @@ export const SignupPage = () => {
     setIsLoading(true)
 
     try {
-      console.log('SignupPage: Starting registration...')
-      // Add timeout to prevent infinite loading
       const registerPromise = register(email, password, name)
       const timeoutPromise = new Promise<never>((_, reject) =>
         setTimeout(() => reject(new Error('Registration request timed out. Please try again.')), 30000)
       )
       
       await Promise.race([registerPromise, timeoutPromise])
-      console.log('SignupPage: Registration successful')
       
-      // Always try to update state and navigate, even if component might unmount
-      // React will handle cleanup automatically
-      console.log('SignupPage: Setting isLoading to false and showSuccessPopup to true')
       setIsLoading(false)
       setShowSuccessPopup(true)
-      console.log('SignupPage: showSuccessPopup set to true')
       
-      // Clear any existing timeout
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current)
       }
       
-      // Set timeout for navigation
       timeoutRef.current = setTimeout(() => {
-        console.log('SignupPage: Navigating to login page...')
         navigate('/login', { replace: true })
       }, 3000)
     } catch (err: unknown) {
-      console.error('SignupPage: Registration error:', err)
       if (isMountedRef.current) {
         const apiError = handleApiError(err)
         setError(apiError.message)
@@ -140,7 +121,6 @@ export const SignupPage = () => {
 
   return (
     <>
-      {/* Success Popup Modal */}
       {showSuccessPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6 animate-in fade-in zoom-in duration-200">

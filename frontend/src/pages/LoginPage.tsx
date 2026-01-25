@@ -22,12 +22,11 @@ export const LoginPage = () => {
     }
   }, [])
 
-  // Navigate when success popup is shown
   useEffect(() => {
     if (showSuccessPopup) {
       timeoutRef.current = setTimeout(() => {
         navigate('/', { replace: true })
-      }, 1000) // Wait 2 seconds before redirect
+      }, 1000)
       
       return () => {
         if (timeoutRef.current) {
@@ -46,12 +45,8 @@ export const LoginPage = () => {
 
     try {
       await login(email, password)
-      console.log('LoginPage: Login completed, showing popup')
-      
-      // Show success popup
       setIsLoading(false)
       setShowSuccessPopup(true)
-      // Navigation will be handled by useEffect after 1 second
     } catch (err: unknown) {
       const apiError = handleApiError(err)
       setError(apiError.message)
@@ -59,17 +54,8 @@ export const LoginPage = () => {
     }
   }
 
-  // const handleClosePopup = () => {
-  //   setShowSuccessPopup(false)
-  //   if (timeoutRef.current) {
-  //     clearTimeout(timeoutRef.current)
-  //   }
-  //   navigate('/', { replace: true })
-  // }
-
   return (
     <>
-      {/* Success Popup Modal */}
       {showSuccessPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6 animate-in fade-in zoom-in duration-200">

@@ -1,23 +1,28 @@
 import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios'
 import { authService } from './authService'
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+const API_BASE_URL =
+  import.meta.env.CORE_API_PATH || 'http://localhost:5000/api'
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 10000, // 10 seconds timeout
+  timeout: 10000,
 })
 
 // Request interceptor
 apiClient.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
-    // Add auth token if available
     const token = authService.getToken()
+    console.log('API Request:', config.method?.toUpperCase(), config.url)
+    console.log('API Token exists:', !!token)
     if (token && config.headers) {
       config.headers.Authorization = `Bearer ${token}`
+      console.log('API Token added to headers')
+    } else {
+      console.warn('API No token found - request may fail if endpoint requires auth')
     }
     return config
   },
@@ -26,27 +31,11 @@ apiClient.interceptors.request.use(
   }
 )
 
-// Response interceptor
-let isRedirecting = false
-
 apiClient.interceptors.response.use(
-  (response) => response,
+  (response) => {
+    return response
+  },
   (error: AxiosError) => {
-    // Handle common errors
-    if (error.response?.status === 401) {
-      // Handle unauthorized - clear auth data using authService
-      // Fire and forget - don't await to avoid blocking the error response
-      authService.logout().catch(err => console.error('Logout error in interceptor:', err))
-      
-      // Prevent multiple redirects
-      if (!isRedirecting && window.location.pathname !== '/login') {
-        isRedirecting = true
-        // Use setTimeout to prevent redirect during render
-        setTimeout(() => {
-          window.location.href = '/login'
-        }, 100)
-      }
-    }
     return Promise.reject(error)
   }
 )

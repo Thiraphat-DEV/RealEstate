@@ -1,5 +1,6 @@
-import { Prop } from '@nestjs/mongoose';
+import { Prop, Schema } from '@nestjs/mongoose';
 
+@Schema({ _id: false })
 export class StandardFields {
   @Prop({ type: Date, default: Date.now })
   createdAt?: Date;

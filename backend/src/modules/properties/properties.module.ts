@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
-import { PropertiesController } from './properties.controller';
-import { PropertiesService } from './properties.service';
+import { PropertiesController } from './controller/properties.controller';
+import { PropertiesService } from './service/properties.service';
+import { MasterSchemaModule } from '../schema/master/master-schema.module';
 
 @Module({
+  imports: [MasterSchemaModule],
   controllers: [PropertiesController],
   providers: [PropertiesService]
 })

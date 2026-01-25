@@ -1,15 +1,35 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Property } from '../types'
 import { PropertyCard } from './PropertyCard'
+import { Pagination, StarRating } from '../../../components/ui'
 
 interface PropertyGridProps {
   properties: Property[]
   loading: boolean
+  pagination?: {
+    total: number
+    page: number
+    pageLimit: number
+    totalPages: number
+  }
+  onPageChange?: (page: number) => void
+  onFavouriteToggle?: (propertyId: string, isFavourite: boolean) => void
+  allAreFavourites?: boolean
+  showRemoveButton?: boolean
+  onRemoveView?: (viewHistoryId: string) => void
 }
 
 export const PropertyGrid = ({
   properties,
+  pagination,
+  onPageChange,
+  onFavouriteToggle,
+  allAreFavourites,
+  showRemoveButton = false,
+  onRemoveView,
 }: PropertyGridProps) => {
+  const navigate = useNavigate()
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
 
   return (
@@ -27,11 +47,10 @@ export const PropertyGrid = ({
         <div className="flex items-center gap-2">
           <button
             onClick={() => setViewMode('grid')}
-            className={`p-2 rounded-lg transition-colors ${
-              viewMode === 'grid'
+            className={`p-2 rounded-lg transition-colors ${viewMode === 'grid'
                 ? 'bg-gold-600 text-white'
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-            }`}
+              }`}
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
@@ -39,11 +58,10 @@ export const PropertyGrid = ({
           </button>
           <button
             onClick={() => setViewMode('list')}
-            className={`p-2 rounded-lg transition-colors ${
-              viewMode === 'list'
+            className={`p-2 rounded-lg transition-colors ${viewMode === 'list'
                 ? 'bg-gold-600 text-white'
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-            }`}
+              }`}
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path
@@ -58,40 +76,76 @@ export const PropertyGrid = ({
 
       {/* Grid/List View */}
       {viewMode === 'grid' ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 items-stretch">
           {properties.map((property) => (
             <div
               key={property.id}
               className="h-full"
             >
-              <PropertyCard property={property} />
+              <PropertyCard
+                property={property}
+                onFavouriteToggle={onFavouriteToggle}
+                initialIsFavourite={allAreFavourites}
+                showRemoveButton={showRemoveButton}
+                onRemoveView={onRemoveView}
+              />
             </div>
           ))}
         </div>
       ) : (
         <div className="space-y-4 w-full">
           {properties.map((property) => {
-            // Extract province from address or location
-            const getProvince = () => {
-              const text = property.address || property.location || ''
-              const provinces = ['Bangkok', 'Chiang Mai', 'Phuket', 'Pattaya', 'Hua Hin']
-              for (const province of provinces) {
-                if (text.includes(province)) {
-                  return province
+            const getDistrictAndProvince = () => {
+              if (property.address && typeof property.address === 'object') {
+                const district = property.address.district || ''
+                const province = property.address.city?.province || property.address.city?.name || ''
+                
+                if (district && province) {
+                  return { district, province, display: `${district}, ${province}` }
+                } else if (province) {
+                  return { district: '', province, display: province }
+                } else if (district) {
+                  return { district, province: '', display: district }
                 }
               }
-              return 'Thailand'
+
+              const text = typeof property.address === 'string'
+                ? property.address
+                : property.location || ''
+
+              if (typeof text === 'string' && text) {
+                const provinces = ['Bangkok', 'Chiang Mai', 'Phuket', 'Pattaya', 'Hua Hin']
+                for (const province of provinces) {
+                  if (text.includes(province)) {
+                    return { district: '', province, display: province }
+                  }
+                }
+              }
+
+              return { district: '', province: '', display: 'Thailand' }
             }
 
-            const province = getProvince()
-            const firstImage = property.images && property.images.length > 0 
-              ? property.images[0] 
+            const { district, province, display: locationDisplay } = getDistrictAndProvince()
+            
+            const getProvinceAndCountry = () => {
+              if (property.address && typeof property.address === 'object' && property.address.city) {
+                const provinceName = property.address.city.province || property.address.city.name || ''
+                const country = property.address.city.country || 'Thailand'
+                return { province: provinceName, country, display: provinceName ? `${provinceName}, ${country}` : country }
+              }
+              return { province: '', country: 'Thailand', display: 'Thailand' }
+            }
+            
+            const { province: provinceName, country, display: provinceCountryDisplay } = getProvinceAndCountry()
+            const firstImage = property.images && property.images.length > 0
+              ? property.images[0]
               : null
 
             return (
               <div
                 key={property.id}
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow w-full overflow-hidden"
+                onClick={() => navigate(`/properties/${property.id}`)}
+                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow w-full overflow-hidden cursor-pointer"
               >
                 <div className="flex flex-col md:flex-row">
                   {/* Image Section */}
@@ -113,7 +167,7 @@ export const PropertyGrid = ({
                       </div>
                     )}
                   </div>
-                  
+
                   {/* Content Section */}
                   <div className="flex-1 p-6 flex flex-col md:flex-row">
                     {/* Left: Title and Price */}
@@ -121,24 +175,33 @@ export const PropertyGrid = ({
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">
                         {property.title}
                       </h3>
+                      {property.rating !== undefined && property.rating > 0 && (
+                        <div className="mb-2">
+                          <StarRating rating={property.rating} size="sm" showValue={true} />
+                        </div>
+                      )}
                       <p className="text-2xl font-bold text-gold-600 mb-3">
                         ฿{property.price.toLocaleString()}
                       </p>
                     </div>
-                    
+
                     {/* Right: Details */}
                     <div className="flex-shrink-0 md:w-64">
                       <div className="space-y-2 text-sm">
-                        {property.address && (
+                        {property.location && (
                           <div className="flex items-start gap-2">
                             <span className="mt-0.5">📍</span>
-                            <span className="text-gray-600">{property.address}</span>
+                            <span className="text-gray-600">
+                              {property.location}
+                            </span>
                           </div>
                         )}
-                        <div className="flex items-center gap-2">
-                          <span>🏙️</span>
-                          <span className="text-gray-600">จังหวัด: {province}</span>
-                        </div>
+                        { (property.location && property.location?.split(',')?.length > 0) && (
+                          <div className="flex items-center gap-2">
+                            <span>🏙️</span>
+                            <span className="text-gray-600">จังหวัด: {property.location?.split(',')[0]}</span>
+                          </div>
+                        )}
                         {property.area && (
                           <div className="flex items-center gap-2">
                             <span>📐</span>
@@ -164,6 +227,17 @@ export const PropertyGrid = ({
               </div>
             )
           })}
+        </div>
+      )}
+
+      {/* Pagination */}
+      {pagination && pagination.totalPages > 1 && onPageChange && (
+        <div className="mt-8">
+          <Pagination
+            currentPage={pagination.page}
+            totalPages={pagination.totalPages}
+            onPageChange={onPageChange}
+          />
         </div>
       )}
     </section>

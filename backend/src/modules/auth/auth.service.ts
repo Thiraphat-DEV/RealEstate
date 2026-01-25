@@ -34,42 +34,33 @@ export class AuthService {
     password: string
   ): Promise<UserResponse | null> {
     try {
-      // Use select('+password') to include password field (since it has select: false)
       const user = await this.userModel
         .findOne({ email: email.toLowerCase() })
         .select('+password')
         .exec();
 
       if (!user) {
-        console.log(`User not found with email: ${email}`);
         return null;
       }
 
       if (!user.password) {
-        console.log(`User found but has no password: ${email}`);
         return null;
       }
 
       try {
         const isValid = await argon2.verify(user.password, password);
         if (isValid) {
-          console.log(`Password verified successfully for user: ${email}`);
           return {
             id: user._id?.toString(),
             _id: user._id?.toString(),
             email: user.email,
             name: user.name
           };
-        } else {
-          console.log(`Password verification failed for user: ${email}`);
         }
       } catch (error) {
-        // Argon2 verification failed
-        console.error('Password verification error:', error);
         return null;
       }
     } catch (error) {
-      console.error('Error in validateUser:', error);
       return null;
     }
 
@@ -92,7 +83,6 @@ export class AuthService {
       }
     };
 
-    // Log user transaction for login
     try {
       await this.logUserTransaction(
         userId,
@@ -101,10 +91,7 @@ export class AuthService {
         ipAddress,
         userAgent
       );
-    } catch (error) {
-      // Don't fail login if logging fails
-      console.error('Failed to log user transaction:', error);
-    }
+    } catch (error) {}
 
     return response;
   }
@@ -128,7 +115,6 @@ export class AuthService {
       });
 
       await transaction.save();
-      console.log(`User transaction logged: ${action} for user ${email}`);
     } catch (error) {
       console.error('Error logging user transaction:', error);
       // Don't throw error, just log it
@@ -142,14 +128,12 @@ export class AuthService {
     userAgent?: string
   ): Promise<void> {
     try {
-      // Validate user exists
       const user = await this.userModel.findById(userId).exec();
 
       if (!user) {
         throw new UnauthorizedException('User not found');
       }
 
-      // Log user transaction for logout (for all users, not just Keycloak users)
       await this.logUserTransaction(
         userId,
         email,
@@ -161,16 +145,12 @@ export class AuthService {
       if (error instanceof UnauthorizedException) {
         throw error;
       }
-      // Don't fail logout if logging fails
-      console.error('Failed to log user transaction:', error);
     }
   }
 
   async validateOAuthUser(profile: any): Promise<UserResponse> {
-    // OAuth user validation logic
     const keycloakID = profile.sub || profile.keycloakID;
 
-    // Try to find user by keycloakID first, then by email
     let user = keycloakID
       ? await this.userModel.findOne({ keycloakID }).exec()
       : null;
@@ -180,16 +160,14 @@ export class AuthService {
     }
 
     if (!user) {
-      // Create new user from OAuth profile
       const newUser = new this.userModel({
         email: profile.email,
         name: profile.name || profile.displayName,
-        password: '', // OAuth users might not have passwords
+        password: '',
         keycloakID: keycloakID
       });
       user = await newUser.save();
     } else {
-      // Update existing user with keycloakID if not set
       if (keycloakID && !user.keycloakID) {
         user.keycloakID = keycloakID;
         await user.save();
@@ -225,12 +203,8 @@ export class AuthService {
       throw new ConflictException('User with this email already exists');
     }
 
-    // Hash password with Argon2
-    console.log(`Hashing password for user: ${normalizedEmail}`);
     const hashedPassword = await this.hashPassword(password);
-    console.log(`Password hashed successfully for user: ${normalizedEmail}`);
 
-    // Create new user using Mongoose model (automatically hydrated)
     const newUser = new this.userModel({
       email: normalizedEmail,
       password: hashedPassword,
@@ -238,11 +212,7 @@ export class AuthService {
     });
 
     try {
-      console.log(`Saving user to database: ${email}`);
       const savedUser = await newUser.save();
-      console.log(
-        `User saved successfully with ID: ${savedUser._id}, email: ${savedUser.email}`
-      );
 
       // Verify the user was saved correctly by querying it back
       const verifyUser = await this.userModel
@@ -259,30 +229,16 @@ export class AuthService {
         );
       }
 
-      console.log(
-        `User verified in database: ${verifyUser.email}, has password: ${!!verifyUser.password}`
-      );
-
-      // Verify password hash is correct by testing it
       try {
-        const passwordTest = await argon2.verify(verifyUser.password, password);
-        if (passwordTest) {
-          console.log(`Password hash verified successfully for user: ${email}`);
-        } else {
-          console.error(`Password hash verification failed for user: ${email}`);
-        }
-      } catch (verifyError) {
-        console.error(`Error verifying password hash: ${verifyError}`);
-      }
+        await argon2.verify(verifyUser.password, password);
+      } catch (verifyError) {}
 
-      // Return user without password as DTO
       return {
         id: savedUser._id?.toString(),
         email: savedUser.email,
         name: savedUser.name
       };
     } catch (error) {
-      console.error('Error saving user:', error);
       if (
         error instanceof ConflictException ||
         error instanceof InternalServerErrorException

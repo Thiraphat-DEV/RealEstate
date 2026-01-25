@@ -1,10 +1,6 @@
 code,name
-APARTMENT,Apartment
-CONDO,Condominium
-HOUSE,House
-VILLA,Villa
-TOWNHOUSE,Townhouse
-LAND,Land
-COMMERCIAL,Commercial
-INDUSTRIAL,Industrial
-OFFICE,Office
+APARTMENT,อพาร์ตเมนต์
+CONDO,คอนโดมิเนียม
+HOUSE,บ้าน
+VILLA,วิลล่า
+TOWNHOUSE,ทาวน์เฮาส์

@@ -8,6 +8,7 @@ This directory contains CSV files with mockup data for importing into MongoDB co
 - `ms_properties_status.csv` - Property statuses (Available, Sold, Rented, etc.)
 - `ms_properties_type.csv` - Property types (Apartment, Condo, House, etc.)
 - `ms_address.csv` - Address data with city references
+- `ms_properties.csv` - Property data (20 real estate properties)
 
 ## Import Data
 
@@ -49,8 +50,22 @@ npx ts-node -r tsconfig-paths/register scripts/import-mockup-data.ts
 - `latitude` - Latitude coordinate (optional)
 - `longitude` - Longitude coordinate (optional)
 
+### ms_properties.csv
+- `title` - Property title (required)
+- `price` - Property price in THB (required)
+- `location` - Location description (required)
+- `description` - Property description (optional)
+- `bedrooms` - Number of bedrooms (optional)
+- `bathrooms` - Number of bathrooms (optional)
+- `area` - Area in ตารางเมตร (optional)
+- `propertyTypeCode` - Reference to property type code in ms_properties_type (required)
+- `statusCode` - Reference to status code in ms_properties_status (required)
+- `address` - Reference to address string in ms_address (optional)
+- `images` - Comma-separated image URLs (optional)
+
 ## Notes
 
 - The import script will skip existing records (based on unique fields)
-- Cities are imported first, then addresses can reference them
+- Import order: cities → statuses → types → addresses → properties
+- Properties reference other master data by codes (propertyTypeCode, statusCode) and address string
 - The script handles relationships between collections automatically

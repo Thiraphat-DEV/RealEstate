@@ -8,6 +8,10 @@ import {
   FavouritesPropertySchema
 } from './schema/systems/favourite-property.entity';
 import {
+  PropertyReviewEntity,
+  PropertyReviewSchema
+} from './schema/systems/property-review.entity';
+import {
   MasterCityEntity,
   MasterCitySchema
 } from './schema/master/ms_city.entity';
@@ -40,6 +44,10 @@ export const schemaTemplate = [
   {
     name: FavouritesPropertyEntity.name,
     schema: FavouritesPropertySchema
+  },
+  {
+    name: PropertyReviewEntity.name,
+    schema: PropertyReviewSchema
   },
   {
     name: MasterCityEntity.name,

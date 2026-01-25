@@ -28,21 +28,21 @@ export class MasterPropertiesEntity extends StandardFields {
   bathrooms?: number;
 
   @Prop({ type: Number, min: 0 })
-  area?: number; // in square meters
+  area?: number; // in ตารางเมตร
 
   @Prop({
     required: true,
     type: Types.ObjectId,
     ref: MasterPropertiesTypeEntity.name
   })
-  propertyType: Types.ObjectId; // e.g., 'apartment', 'house', 'villa', 'condo'
+  propertyType: Types.ObjectId;
 
   @Prop({
     required: true,
     type: Types.ObjectId,
     ref: MasterPropertiesStatusEntity.name
   })
-  status: Types.ObjectId; // e.g., 'available', 'sold', 'rented', 'pending'
+  status: Types.ObjectId;
 
   @Prop({ type: [String], default: [] })
   images?: string[];
@@ -51,5 +51,6 @@ export class MasterPropertiesEntity extends StandardFields {
   address?: Types.ObjectId;
 }
 
-export const MasterPropertiesSchema =
-  SchemaFactory.createForClass(MasterPropertiesEntity);
+export const MasterPropertiesSchema = SchemaFactory.createForClass(
+  MasterPropertiesEntity
+);
