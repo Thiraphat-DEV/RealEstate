@@ -77,7 +77,7 @@ services:
       - DB_SSL=false
       - FRONTEND_URL=http://localhost:3000
       - JWT_SECRET=
-      - KEYCLOAK_BASE_URL=http://keycloak:8080
+      - KEYCLOAK_BASE_URL=
       - KEYCLOAK_REALM=
       - KEYCLOAK_CLIENT_ID=
       - KEYCLOAK_CLIENT_SECRET=
