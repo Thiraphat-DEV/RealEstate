@@ -125,7 +125,7 @@ export const PropertyGrid = ({
               return { district: '', province: '', display: 'Thailand' }
             }
 
-            const { district, province, display: locationDisplay } = getDistrictAndProvince()
+            const { district: _district, province: _province, display: _locationDisplay } = getDistrictAndProvince()
             
             const getProvinceAndCountry = () => {
               if (property.address && typeof property.address === 'object' && property.address.city) {
@@ -136,7 +136,7 @@ export const PropertyGrid = ({
               return { province: '', country: 'Thailand', display: 'Thailand' }
             }
             
-            const { province: provinceName, country, display: provinceCountryDisplay } = getProvinceAndCountry()
+            const { province: _provinceName, country: _country, display: _provinceCountryDisplay } = getProvinceAndCountry()
             const firstImage = property.images && property.images.length > 0
               ? property.images[0]
               : null

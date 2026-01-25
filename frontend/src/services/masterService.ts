@@ -13,6 +13,8 @@ export interface PropertyMaster {
   name: string
 }
 
+export type PropertyTypeMaster = PropertyMaster
+
 export interface CityMaster {
   id: string
   code: string

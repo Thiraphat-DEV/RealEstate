@@ -1,5 +1,5 @@
 import { Property } from '../types'
-import { PropertyMaster, AddressMaster } from '../../../services/masterService'
+import { PropertyMaster, AddressMaster, PropertyTypeMaster, CityMaster } from '../../../services/masterService'
 
 export interface PropertyModel {
   _id: string
@@ -11,15 +11,28 @@ export interface PropertyModel {
   bathrooms?: number
   area?: number
   images?: string[]
-  propertyType?: PropertyMaster
-  status?: PropertyMaster
+  propertyType?: PropertyMaster | {
+    _id?: string | { toString: () => string }
+    id?: string
+    code?: string
+    name?: string
+  }
+  propertyTypeName?: string
+  status?: PropertyMaster | {
+    _id?: string | { toString: () => string }
+    id?: string
+    code?: string
+    name?: string
+  }
+  statusName?: string
   address?: AddressMaster | {
     _id?: string | { toString: () => string }
     name?: string
     district?: string
     subDistrict?: string
-    city?: {
+    city?: CityMaster | {
       _id?: string | { toString: () => string }
+      id?: string
       name?: string
       province?: string
       country?: string
@@ -42,11 +55,12 @@ export const mapProperty = (propertyProps: PropertyModel): Property => {
       propertyType = propertyProps.propertyType
     } else {
       // It's an object from aggregation
-      const id = propertyProps.propertyType._id
+      const id = ('_id' in propertyProps.propertyType ? propertyProps.propertyType._id : propertyProps.propertyType.id) || 
+                 ('id' in propertyProps.propertyType ? propertyProps.propertyType.id : undefined)
       propertyType = typeof id === 'string' 
         ? id 
-        : id?.toString?.() || undefined
-      propertyTypeName = propertyProps.propertyType.name || propertyTypeName
+        : (id && typeof id === 'object' && 'toString' in id ? id.toString() : undefined) || undefined
+      propertyTypeName = ('name' in propertyProps.propertyType ? propertyProps.propertyType.name : undefined) || propertyTypeName
       
       // Create full PropertyTypeMaster object if we have all fields
       if (propertyType && propertyProps.propertyType.name) {
@@ -68,11 +82,12 @@ export const mapProperty = (propertyProps: PropertyModel): Property => {
       status = propertyProps.status
     } else {
       // It's an object from aggregation
-      const id = propertyProps.status._id
+      const id = ('_id' in propertyProps.status ? propertyProps.status._id : propertyProps.status.id) || 
+                 ('id' in propertyProps.status ? propertyProps.status.id : undefined)
       status = typeof id === 'string' 
         ? id 
-        : id?.toString?.() || undefined
-      statusName = propertyProps.status.name || statusName
+        : (id && typeof id === 'object' && 'toString' in id ? id.toString() : undefined) || undefined
+      statusName = ('name' in propertyProps.status ? propertyProps.status.name : undefined) || statusName
     }
   }
 
@@ -82,25 +97,52 @@ export const mapProperty = (propertyProps: PropertyModel): Property => {
     if (typeof propertyProps.address === 'string') {
       address = { id: propertyProps.address, code: '', name: propertyProps.address }
     } else {
-      const addressId = propertyProps.address._id
-      const id = typeof addressId === 'string' 
-        ? addressId 
-        : addressId?.toString?.() || ''
+      // Check if it's AddressMaster (has 'id' property) or aggregation object (has '_id')
+      const addressId = 'id' in propertyProps.address && propertyProps.address.id
+        ? propertyProps.address.id
+        : ('_id' in propertyProps.address && propertyProps.address._id
+          ? (typeof propertyProps.address._id === 'string'
+            ? propertyProps.address._id
+            : propertyProps.address._id?.toString?.() || '')
+          : '')
       
       address = {
-        id: id,
-        code: '',
+        id: addressId,
+        code: 'code' in propertyProps.address ? (propertyProps.address.code || '') : '',
         name: propertyProps.address.name || '',
         district: propertyProps.address.district,
         subDistrict: propertyProps.address.subDistrict,
-        city: propertyProps.address.city ? {
-          id: typeof propertyProps.address.city._id === 'string'
-            ? propertyProps.address.city._id
-            : propertyProps.address.city._id?.toString?.() || '',
-          code: '',
-          name: propertyProps.address.city.name || '',
-          province: propertyProps.address.city.province,
-        } : undefined,
+        city: propertyProps.address.city ? (() => {
+          const city = propertyProps.address.city!
+          // Type guard: Check if it's CityMaster (has 'id' property)
+          const isCityMaster = (c: typeof city): c is CityMaster => {
+            return 'id' in c && typeof c.id === 'string' && !('_id' in c)
+          }
+          
+          if (isCityMaster(city)) {
+            return {
+              id: city.id,
+              code: city.code || '',
+              name: city.name || '',
+              province: city.province,
+            }
+          }
+          
+          // Otherwise it's an aggregation object with _id
+          const cityWithId = city as { _id?: string | { toString: () => string }; id?: string; name?: string; province?: string; country?: string }
+          const cityId = cityWithId.id 
+            ? cityWithId.id
+            : (typeof cityWithId._id === 'string' 
+              ? cityWithId._id 
+              : (cityWithId._id && typeof cityWithId._id === 'object' && 'toString' in cityWithId._id ? cityWithId._id.toString() : ''))
+          
+          return {
+            id: cityId || '',
+            code: '',
+            name: cityWithId.name || '',
+            province: cityWithId.province,
+          }
+        })() : undefined,
       }
     }
   }

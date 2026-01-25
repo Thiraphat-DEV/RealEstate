@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Property, type PropertyFilterState } from '../types'
 import propertyService from '../services/propertyService'
-import { authService } from '../../../services/authService'
 import { reviewService } from '../../../services/reviewService'
 
 export const useProperties = () => {
@@ -50,7 +49,7 @@ export const useProperties = () => {
       const propertiesWithRatings = await Promise.all(
         response.properties.map(async (property) => {
           try {
-            const ratingResponse = await reviewService.getMedianRatingByPropertyId(property.id)
+            const ratingResponse = await reviewService.getMedianRatingByPropertyId(String(property.id))
             return {
               ...property,
               rating: ratingResponse.data || 0,

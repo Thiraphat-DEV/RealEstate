@@ -17,7 +17,7 @@ export const useFavourites = () => {
       const favouritesWithRatings = await Promise.all(
         data.map(async (property) => {
           try {
-            const ratingResponse = await reviewService.getMedianRatingByPropertyId(property.id)
+            const ratingResponse = await reviewService.getMedianRatingByPropertyId(String(property.id))
             return {
               ...property,
               rating: ratingResponse.data || 0,

@@ -10,17 +10,21 @@ export class KeycloakStrategy extends PassportStrategy(Strategy, 'keycloak') {
     private configService: ConfigService,
     private authService: AuthService
   ) {
-    const keycloakBaseUrl = configService.get<string>('KEYCLOAK_BASE_URL');
-    const realm = configService.get<string>('KEYCLOAK_REALM');
-    const clientID = configService.get<string>('KEYCLOAK_CLIENT_ID');
-    const clientSecret = configService.get<string>('KEYCLOAK_CLIENT_SECRET');
+    const keycloakBaseUrl = configService.get<string>('KEYCLOAK_BASE_URL') || 'http://localhost:8080';
+    const realm = configService.get<string>('KEYCLOAK_REALM') || 'master';
+    const clientID = configService.get<string>('KEYCLOAK_CLIENT_ID') || 'realestate-client';
+    const clientSecret = configService.get<string>('KEYCLOAK_CLIENT_SECRET') || '';
+    const callbackURL = configService.get<string>('KEYCLOAK_CALLBACK_URL') || 'http://localhost:5000/api/auth/keycloak/callback';
+
+    // Ensure clientID is not empty (OAuth2Strategy requirement)
+    const validClientID = clientID && clientID.trim() !== '' ? clientID : 'realestate-client';
 
     super({
       authorizationURL: `${keycloakBaseUrl}/realms/${realm}/protocol/openid-connect/auth`,
       tokenURL: `${keycloakBaseUrl}/realms/${realm}/protocol/openid-connect/token`,
-      clientID: clientID,
+      clientID: validClientID,
       clientSecret: clientSecret,
-      callbackURL: configService.get<string>('KEYCLOAK_CALLBACK_URL'),
+      callbackURL: callbackURL,
       scope: ['openid', 'profile', 'email']
     });
   }

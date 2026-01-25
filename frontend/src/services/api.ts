@@ -2,7 +2,7 @@ import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios'
 import { authService } from './authService'
 
 const API_BASE_URL =
-  import.meta.env.CORE_API_PATH || 'http://localhost:5000/api'
+  (import.meta.env.VITE_API_BASE_URL as string) || 'http://localhost:5000/api'
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,

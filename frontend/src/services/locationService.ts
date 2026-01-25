@@ -14,7 +14,10 @@ const getLocations = (): LocationMaster[] => {
 }
 
 export const locationService = {
-  async getAllCountries(): LocationMaster[] => {
+  getAll: (): LocationMaster[] => {
+    return getLocations()
+  },
+  getAllCountries: (): LocationMaster[] => {
     return getLocations()
   },
 

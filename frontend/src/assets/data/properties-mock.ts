@@ -1,5 +1,6 @@
 import { Property } from '../../features/properties/types'
 import { locationService } from '../../services/locationService'
+import { LocationMaster } from '../../utils/locationUtils'
 
 // Generate mock properties with prices and addresses
 const generateMockProperties = (): Property[] => {
@@ -41,7 +42,7 @@ const generateMockProperties = (): Property[] => {
     'Soi Thong Lo',
   ]
 
-  return locations.slice(0, 50).map((location, index) => {
+  return locations.slice(0, 50).map((location: LocationMaster, index: number) => {
     const propertyType = propertyTypes[index % propertyTypes.length]
     const buildingName = buildingNames[index % buildingNames.length]
     const streetNumber = Math.floor(Math.random() * 999) + 1

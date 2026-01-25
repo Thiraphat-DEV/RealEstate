@@ -163,7 +163,7 @@ export const PropertyDetailPage = () => {
       ['from-purple-500', 'to-purple-400'],
     ]
     return Array.from({ length: 4 }, (_, i) => {
-      const colorIndex = (property?.id ? property.id.charCodeAt(0) + i : i) % colors.length
+      const colorIndex = (property?.id ? String(property.id).charCodeAt(0) + i : i) % colors.length
       return colors[colorIndex]
     })
   }
@@ -192,6 +192,28 @@ export const PropertyDetailPage = () => {
           <div className="bg-white rounded-2xl border-2 border-red-300 max-w-2xl mx-auto my-8 shadow-lg p-8">
             <p className="text-2xl mb-4 text-red-600 font-semibold">
               ⚠️ {error || 'Property not found'}
+            </p>
+            <Button
+              onClick={() => navigate('/')}
+              className="mt-4"
+            >
+              Back to Home
+            </Button>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (!property) {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <Header />
+        <div className="text-center py-32 px-8">
+          <div className="bg-white rounded-2xl border-2 border-red-300 max-w-2xl mx-auto my-8 shadow-lg p-8">
+            <p className="text-2xl mb-4 text-red-600 font-semibold">
+              ⚠️ Property not found
             </p>
             <Button
               onClick={() => navigate('/')}
@@ -643,7 +665,7 @@ export const PropertyDetailPage = () => {
             <div className="pt-6 border-t border-gray-200">
               <ContactAgent
                 propertyTitle={property.title}
-                propertyId={property.id}
+                propertyId={String(property.id)}
                 className="w-full"
               />
             </div>

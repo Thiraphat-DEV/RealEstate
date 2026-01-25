@@ -231,7 +231,7 @@ export const propertyService = {
       
       return allProperties.filter(
         (p) => p.location?.toLowerCase().includes(lowerLocation) ||
-               p.address?.toLowerCase().includes(lowerLocation)
+               (typeof p.address === 'string' ? p.address.toLowerCase().includes(lowerLocation) : false)
       )
     } catch (error) {
       console.error('Error fetching properties by location:', error)
@@ -254,7 +254,7 @@ export const propertyService = {
         (p) =>
           p.title?.toLowerCase().includes(lowerQuery) ||
           p.location?.toLowerCase().includes(lowerQuery) ||
-          p.address?.toLowerCase().includes(lowerQuery) ||
+          (typeof p.address === 'string' ? p.address.toLowerCase().includes(lowerQuery) : false) ||
           p.description?.toLowerCase().includes(lowerQuery)
       )
     } catch (error) {

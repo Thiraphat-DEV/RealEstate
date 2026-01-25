@@ -4,6 +4,7 @@ import { Property } from '../types'
 import { Button, StarRating } from '../../../components/ui'
 import favouritesService from '../services/favouritesService'
 import { useAuth } from '../../../features/auth/context/AuthContext'
+// import { reviewService, type Review } from '../../../services/reviewService'
 
 interface PropertyCardProps {
   property: Property
@@ -21,6 +22,7 @@ export const PropertyCard = forwardRef<HTMLDivElement, PropertyCardProps>(
     const { isAuthenticated } = useAuth()
     const [isFavourite, setIsFavourite] = useState(initialIsFavourite ?? false)
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
+    // const [latestReview, setLatestReview] = useState<Review | null>(null)
 
     // Check favourite status when component mounts or property changes
     useEffect(() => {
@@ -39,7 +41,7 @@ export const PropertyCard = forwardRef<HTMLDivElement, PropertyCardProps>(
       // Otherwise, check with the server
       const checkFavouriteStatus = async () => {
         try {
-          const favouriteStatus = await favouritesService.isFavourite(property.id)
+          const favouriteStatus = await favouritesService.isFavourite(String(property.id))
           setIsFavourite(favouriteStatus)
         } catch (error) {
           console.error('PropertyCard: Failed to check favourite status', error)
@@ -49,6 +51,26 @@ export const PropertyCard = forwardRef<HTMLDivElement, PropertyCardProps>(
 
       checkFavouriteStatus()
     }, [property.id, initialIsFavourite, isAuthenticated])
+
+    // Fetch latest review for this property
+    // useEffect(() => {
+    //   const fetchLatestReview = async () => {
+    //     try {
+    //       const reviewsResponse = await reviewService.getReviewsByPropertyId(String(property.id))
+    //       if (reviewsResponse.data && reviewsResponse.data.length > 0) {
+    //         // Get the most recent review (first one, assuming backend returns sorted by date)
+    //         setLatestReview(reviewsResponse.data[0])
+    //       } else {
+    //         setLatestReview(null)
+    //       }
+    //     } catch (error) {
+    //       console.error('PropertyCard: Failed to fetch latest review', error)
+    //       setLatestReview(null)
+    //     }
+    //   }
+
+    //   fetchLatestReview()
+    // }, [property.id])
 
     const handleCardClick = () => {
       if (onClick) {
@@ -77,13 +99,13 @@ export const PropertyCard = forwardRef<HTMLDivElement, PropertyCardProps>(
 
       try {
         const serverIsFavourite = await favouritesService.toggleFavourite(
-          property.id
+          String(property.id)
         )
 
         setIsFavourite(serverIsFavourite)
 
         if (onFavouriteToggle) {
-          onFavouriteToggle(property.id, serverIsFavourite)
+          onFavouriteToggle(String(property.id), serverIsFavourite)
         }
       } catch (error: any) {
         console.error('PropertyCard: Failed to toggle favourite', error)
@@ -121,7 +143,7 @@ export const PropertyCard = forwardRef<HTMLDivElement, PropertyCardProps>(
       }
       // Generate real estate property images using Unsplash
       // Using property ID as seed to get consistent images per property
-      const propertySeed = property.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)
+                      const propertySeed = String(property.id).split('').reduce((acc: number, char: string) => acc + char.charCodeAt(0), 0)
       
       // Real estate related Unsplash photo IDs (actual real estate property photos from Unsplash)
       // These are verified Unsplash photo IDs for houses, buildings, and properties
@@ -193,7 +215,7 @@ export const PropertyCard = forwardRef<HTMLDivElement, PropertyCardProps>(
                     onError={(e) => {
                       // Fallback to a different real estate image if one fails
                       const target = e.target as HTMLImageElement
-                      const propertySeed = property.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)
+                      const propertySeed = String(property.id).split('').reduce((acc: number, char: string) => acc + char.charCodeAt(0), 0)
                       const fallbackIndex = (propertySeed + index + 100) % 32
                       const fallbackPhotoIds = [
                         '1568605114939', '1568605114940', '1568605114941', '1568605114942',
@@ -317,6 +339,36 @@ export const PropertyCard = forwardRef<HTMLDivElement, PropertyCardProps>(
               <StarRating rating={property.rating} size="sm" showValue={true} />
             </div>
           )}
+          
+          {/* {latestReview && latestReview.comment && (
+            <div className="mb-3 p-2 bg-gray-50 rounded-lg border border-gray-200">
+              <div className="flex items-center gap-2 mb-1">
+                <div className="w-6 h-6 bg-gold-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-gold-600 font-semibold text-xs">
+                    {latestReview.userName.charAt(0).toUpperCase()}
+                  </span>
+                </div>
+                <span className="text-xs font-medium text-gray-700">{latestReview.userName}</span>
+                <div className="flex items-center gap-0.5 ml-auto">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <svg
+                      key={star}
+                      className={`w-3 h-3 ${star <= latestReview.rating
+                          ? 'text-amber-400 fill-current'
+                          : 'text-gray-300'
+                        }`}
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+              </div>
+              <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                {latestReview.comment}
+              </p>
+            </div>
+          )} */}
           
           {/* Price */}
           <div className="mb-3">

@@ -5085,4 +5085,4 @@ export const propertiesMasterData: Property[] = [
       "https://images.unsplash.com/photo-1556912172-0a9b0e0b8b8b?w=800&h=600&fit=crop&auto=format&q=80&sig=200"
     ]
   }
-] as Property[]
+] as unknown as Property[]
