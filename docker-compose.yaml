@@ -1,4 +1,4 @@
-version: "3.9"
+# version: "3.9"
 
 services:
   keycloak:
@@ -82,11 +82,19 @@ services:
       - KEYCLOAK_CLIENT_ID=
       - KEYCLOAK_CLIENT_SECRET=
       - KEYCLOAK_CALLBACK_URL=
+      - EMAILJS_PUBLIC_KEY=
+      - EMAILJS_PRIVATE_KEY=
+      - EMAILJS_SERVICE_ID=
+      - EMAILJS_TEMPLATE_ID=
+      - EMAILJS_FROM_NAME=Real Estate API
+      - EMAILJS_REPLY_TO=
     ports:
       - "5000:5000"
     depends_on:
       mongodb:
         condition: service_healthy
+      postfix:
+        condition: service_started
     restart: unless-stopped
     networks:
       - realestate-network
@@ -114,6 +122,8 @@ services:
 volumes:
   mongodb_data:
   mongodb_config:
+  postfix_data:
+  postfix_config:
 
 networks:
   realestate-network:

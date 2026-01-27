@@ -16,9 +16,11 @@ export const ContactToExpert = ({ className = '' }: ContactToExpertProps) => {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setError(null)
     setIsSubmitting(true)
 
     try {
@@ -33,16 +35,48 @@ export const ContactToExpert = ({ className = '' }: ContactToExpertProps) => {
       setIsSubmitted(true)
       setFormData({ name: '', email: '', phone: '', question: '' })
 
-      // Reset success message after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false)
         setIsExpanded(false)
       }, 3000)
-    } catch (error: any) {
-      console.error('ContactToExpert: Error submitting inquiry:', error)
+    } catch (err: any) {
       setIsSubmitting(false)
-      // You could add error state here to show error message to user
-      alert('Failed to submit inquiry. Please try again.')
+      
+      let errorMessage = 'Failed to submit inquiry. Please try again.'
+      
+      if (err?.response?.data?.message) {
+        const messages = err.response.data.message
+        if (Array.isArray(messages)) {
+          errorMessage = messages.join('. ')
+        } else {
+          errorMessage = messages
+        }
+      } else if (err?.response?.data?.error) {
+        errorMessage = err.response.data.error
+      } else if (err?.message) {
+        errorMessage = err.message
+      } else if (err?.response?.status === 400) {
+        const responseData = err?.response?.data
+        if (responseData) {
+          if (Array.isArray(responseData.message)) {
+            errorMessage = responseData.message.join('. ')
+          } else if (typeof responseData.message === 'string') {
+            errorMessage = responseData.message
+          } else {
+            errorMessage = 'Invalid form data. Please check your inputs and try again.'
+          }
+        } else {
+          errorMessage = 'Invalid form data. Please check your inputs and try again.'
+        }
+      } else if (err?.response?.status === 500) {
+        errorMessage = 'Server error. Please try again later.'
+      } else if (err?.code === 'ECONNABORTED' || err?.message?.includes('timeout')) {
+        errorMessage = 'Request timed out. Please check your connection and try again.'
+      } else if (err?.code === 'ERR_NETWORK') {
+        errorMessage = 'Network error. Please check your connection and try again.'
+      }
+      
+      setError(errorMessage)
     }
   }
 
@@ -61,7 +95,6 @@ export const ContactToExpert = ({ className = '' }: ContactToExpertProps) => {
       style={{ maxWidth: '380px' }}
     >
       {!isExpanded ? (
-        // Collapsed state - Floating button
         <button
           onClick={() => setIsExpanded(true)}
           className="bg-gradient-to-r from-gold-500 to-gold-600 text-white rounded-full shadow-2xl hover:shadow-gold-500/50 p-3 md:p-4 hover:scale-110 transition-all duration-300 flex items-center gap-2 md:gap-3 group"
@@ -100,9 +133,7 @@ export const ContactToExpert = ({ className = '' }: ContactToExpertProps) => {
           </svg>
         </button>
       ) : (
-        // Expanded state - Full form
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 max-h-[90vh] overflow-y-auto">
-          {/* Header */}
           <div className="bg-gradient-to-r from-gold-500 to-gold-600 text-white p-4 flex items-center justify-between sticky top-0 z-10">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
@@ -146,10 +177,8 @@ export const ContactToExpert = ({ className = '' }: ContactToExpertProps) => {
             </button>
           </div>
 
-          {/* Content */}
           <div className="p-6">
             {isSubmitted ? (
-              // Success message
               <div className="text-center py-8">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg
@@ -174,8 +203,49 @@ export const ContactToExpert = ({ className = '' }: ContactToExpertProps) => {
                 </p>
               </div>
             ) : (
-              // Form
               <form onSubmit={handleSubmit} className="space-y-4">
+                {error && (
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-3 flex items-start gap-2">
+                    <svg
+                      className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-red-800">
+                        {error}
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setError(null)}
+                      className="text-red-600 hover:text-red-800 flex-shrink-0"
+                      aria-label="Close error"
+                    >
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                )}
                 <div>
                   <label
                     htmlFor="guru-name"
@@ -245,10 +315,14 @@ export const ContactToExpert = ({ className = '' }: ContactToExpertProps) => {
                     value={formData.question}
                     onChange={handleChange}
                     required
+                    minLength={10}
                     rows={4}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 text-sm resize-none"
-                    placeholder="Contact to Expert"
+                    placeholder="Please enter your question (minimum 10 characters)"
                   />
+                  <p className="text-xs text-gray-500 mt-1">
+                    Minimum 10 characters required ({formData.question.length}/10)
+                  </p>
                 </div>
 
                 <Button
