@@ -23,6 +23,7 @@ export const HomePage = () => {
     areaMin: '',
     areaMax: '',
     search: '',
+    rating: 0,
   })
 
   const handleFilterChange = (filters: PropertyFilterState) => {
@@ -41,7 +42,8 @@ export const HomePage = () => {
       currentFilters.bathrooms ||
       currentFilters.areaMin ||
       currentFilters.areaMax ||
-      currentFilters.search
+      currentFilters.search || 
+      currentFilters.rating
     )
   }
 
@@ -57,6 +59,7 @@ export const HomePage = () => {
       areaMin: '',
       areaMax: '',
       search: '',
+      rating: 0
     }
     setCurrentFilters(emptyFilters)
     setFilters(emptyFilters)

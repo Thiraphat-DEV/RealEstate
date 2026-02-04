@@ -4,7 +4,10 @@ import {
   type PropertyTypeMaster,
   type CityMaster,
 } from '../../../services/masterService'
+import { StarRating } from '../../../components/ui'
 import type { PropertyFilterState } from '../types'
+
+const RATING_OPTIONS = [1, 2, 3, 4, 5] as const
 
 interface PropertyFiltersProps {
   value?: PropertyFilterState
@@ -23,6 +26,7 @@ export const PropertyFilters = ({ value, onFilterChange }: PropertyFiltersProps)
     areaMin: '',
     areaMax: '',
     search: '',
+    rating: []
   })
 
   const filters = value ?? internalFilters
@@ -42,13 +46,22 @@ export const PropertyFilters = ({ value, onFilterChange }: PropertyFiltersProps)
     areaMin: '',
     areaMax: '',
     search: '',
+    rating: []
   })
 
   // Sync localFilters with value when value changes (for controlled mode)
   useEffect(() => {
     if (value) {
-      setInternalFilters(value)
-      setLocalFilters(value)
+      const normalized = {
+        ...value,
+        rating: Array.isArray(value.rating)
+          ? value.rating
+          : typeof value.rating === 'number' && value.rating >= 0 && value.rating <= 5
+            ? [value.rating]
+            : [],
+      }
+      setInternalFilters(normalized)
+      setLocalFilters(normalized)
     }
   }, [value])
 
@@ -86,6 +99,23 @@ export const PropertyFilters = ({ value, onFilterChange }: PropertyFiltersProps)
     }))
   }
 
+  const ratingArr = (() => {
+    const r = localFilters.rating
+    if (Array.isArray(r)) return r
+    if (typeof r === 'number' && r >= 0 && r <= 5) return [r]
+    return []
+  })()
+
+  const handleRatingToggle = (r: number) => {
+    setLocalFilters(prev => {
+      const current = Array.isArray(prev.rating) ? prev.rating : (typeof prev.rating === 'number' ? [prev.rating] : [])
+      const next = current.includes(r)
+        ? current.filter((x) => x !== r)
+        : [...current, r].sort((a, b) => a - b)
+      return { ...prev, rating: next }
+    })
+  }
+
   const handleSubmitAll = (e: React.FormEvent) => {
     e.preventDefault()
     
@@ -113,6 +143,7 @@ export const PropertyFilters = ({ value, onFilterChange }: PropertyFiltersProps)
       areaMin: '',
       areaMax: '',
       search: '',
+      rating: []
     }
     setLocalFilters(emptyFilters)
     if (!value) {
@@ -270,6 +301,40 @@ export const PropertyFilters = ({ value, onFilterChange }: PropertyFiltersProps)
               />
             </div>
           </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-600 mb-2">
+              ความชื่นชอบ
+            </label>
+
+            <div className="flex flex-wrap gap-2">
+              {RATING_OPTIONS.map((r) => {
+                const selected = ratingArr.includes(r)
+                return (
+                  <button
+                    key={r}
+                    type="button"
+                    onClick={() => handleRatingToggle(r)}
+                    className={`
+                      inline-flex items-center justify-center gap-1 px-3 py-2 rounded-full border-2 transition-colors
+                      focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-1
+                      ${selected
+                        ? 'border-amber-500 bg-amber-50 text-amber-700 shadow-sm'
+                        : 'border-gray-200 bg-white text-gray-600 hover:border-amber-300 hover:bg-amber-50/50'
+                      }
+                    `}
+                  >
+                    <StarRating rating={r} size="sm" />
+                  </button>
+                )
+              })}
+            </div>
+            {ratingArr.length > 0 && (
+              <p className="mt-1.5 text-xs text-gray-500">
+                เลือกแล้ว {ratingArr.length} ระดับ
+              </p>
+            )}
+          </div>
         </div>
 
         <div className="mt-6 pt-6 border-t border-gray-200">
@@ -280,6 +345,7 @@ export const PropertyFilters = ({ value, onFilterChange }: PropertyFiltersProps)
             ใช้ตัวกรอง
           </button>
         </div>
+
       </form>
     </div>
   )

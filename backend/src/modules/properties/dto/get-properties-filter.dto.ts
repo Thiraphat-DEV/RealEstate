@@ -1,8 +1,27 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsOptional, IsString, IsNumber, Min } from 'class-validator';
+import { IsOptional, IsString, IsNumber, Min, Max, IsArray } from 'class-validator';
 import { Type } from 'class-transformer';
+import { Transform } from 'class-transformer';
 
 export class GetPropertiesFilterDTO {
+  @ApiProperty({
+    required: false,
+    description: 'Filter by Rating (1-5), multiple allowed',
+    type: Number,
+    isArray: true,
+  })
+  @IsOptional()
+  @Transform(({ value }) => {
+    if (value == null) return undefined;
+    const arr = Array.isArray(value) ? value : [value];
+    return arr.map((v) => (typeof v === 'string' ? Number(v) : v)).filter((n) => !isNaN(n) && n >= 0 && n <= 5);
+  })
+  @IsArray()
+  @IsNumber({}, { each: true })
+  @Min(0, { each: true })
+  @Max(5, { each: true })
+  rating?: number[];
+
   @ApiProperty({
     description: 'Filter by location or city name',
     required: false

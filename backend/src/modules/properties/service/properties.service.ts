@@ -8,12 +8,18 @@ import {
   MasterPropertiesEntity,
   MasterPropertiesDocument
 } from 'src/modules/schema/master/ms_properties.entity';
+import {
+  PropertyReviewEntity,
+  PropertyReviewDocument
+} from 'src/modules/schema/systems/property-review.entity';
 
 @Injectable()
 export class PropertiesService {
   constructor(
     @InjectModel(MasterPropertiesEntity.name)
-    private readonly masterPropertiesModel: Model<MasterPropertiesDocument>
+    private readonly masterPropertiesModel: Model<MasterPropertiesDocument>,
+    @InjectModel(PropertyReviewEntity.name)
+    private readonly ssPropertyReviewModel: Model<PropertyReviewDocument>
   ) {}
 
   async getAllProperties(
@@ -44,6 +50,80 @@ export class PropertiesService {
         ...(query?.areaMin && { area: { $gte: query.areaMin } }),
         ...(query?.areaMax && { area: { $lte: query.areaMax } })
       };
+
+      const ratingArr = query?.rating != null
+        ? (Array.isArray(query.rating) ? query.rating : [query.rating])
+        : [];
+      if (ratingArr.length > 0) {
+        const pipelinePropertiesByRating: PipelineStage[] = [
+          {
+            $match: {
+              rating: { $in: ratingArr },
+              status: 'active'
+            }
+          },
+          {
+            $sort: { rating: 1 }
+          },
+          {
+            $group: {
+              _id: '$propertyId',
+              ratings: { $push: '$rating' },
+              count: { $sum: 1 }
+            }
+          },
+          {
+            $project: {
+              _id: 1,
+              medianRating: {
+                $cond: {
+                  if: { $eq: ['$count', 0] },
+                  then: 0,
+                  else: {
+                    $cond: {
+                      if: { $eq: [{ $mod: ['$count', 2] }, 0] }, // Even number of ratings
+                      then: {
+                        $divide: [
+                          {
+                            $add: [
+                              {
+                                $arrayElemAt: [
+                                  '$ratings',
+                                  { $subtract: [{ $divide: ['$count', 2] }, 1] }
+                                ]
+                              },
+                              {
+                                $arrayElemAt: [
+                                  '$ratings',
+                                  { $divide: ['$count', 2] }
+                                ]
+                              }
+                            ]
+                          },
+                          2
+                        ]
+                      },
+                      else: {
+                        $arrayElemAt: [
+                          '$ratings',
+                          { $floor: { $divide: ['$count', 2] } }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ];
+
+        const propertiesByRating = (
+          await this.ssPropertyReviewModel
+            .aggregate(pipelinePropertiesByRating)
+            .exec()
+        )?.map((e) => e?._id);
+        filter['_id'] = { $in: propertiesByRating };
+      }
 
       const basePipeline: PipelineStage[] = [
         {
@@ -447,7 +527,7 @@ export class PropertiesService {
                             },
                             else: ''
                           }
-                        },
+                        }
                       ]
                     },
                     else: ''
@@ -463,7 +543,6 @@ export class PropertiesService {
         .aggregate(pipeline)
         .exec();
 
-      console.log('Pipeline stages:', result);
       if (!result || result.length === 0) {
         return ResponseHelper<MasterPropertiesDocument | null>(
           null,

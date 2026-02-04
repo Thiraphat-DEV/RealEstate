@@ -43,4 +43,5 @@ export interface PropertyFilterState {
   search: string
   page?: number
   pageLimit?: number
+  rating?: number | number[]
 }

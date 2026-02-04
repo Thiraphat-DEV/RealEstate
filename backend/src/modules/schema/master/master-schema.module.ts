@@ -14,6 +14,7 @@ import {
 } from './ms_properties_status.entity';
 import { MasterAddressEntity, MasterAddressSchema } from './ms_address.entity';
 import { MasterCityEntity, MasterCitySchema } from './ms_city.entity';
+import { PropertyReviewEntity, PropertyReviewSchema } from '../systems/property-review.entity';
 
 @Module({
   imports: [
@@ -28,7 +29,11 @@ import { MasterCityEntity, MasterCitySchema } from './ms_city.entity';
         schema: MasterPropertiesStatusSchema
       },
       { name: MasterAddressEntity.name, schema: MasterAddressSchema },
-      { name: MasterCityEntity.name, schema: MasterCitySchema }
+      { name: MasterCityEntity.name, schema: MasterCitySchema },
+      {
+        name: PropertyReviewEntity.name,
+        schema: PropertyReviewSchema
+      }
     ])
   ],
   exports: [MongooseModule]

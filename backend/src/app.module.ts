@@ -9,6 +9,7 @@ import { MasterModule } from './modules/master/master.module';
 import { InquiriesModule } from './modules/inquiries/inquiries.module';
 import { ReviewsModule } from './modules/reviews/reviews.module';
 import { ViewHistoryModule } from './modules/view-history/view-history.module';
+import { ChatModule } from './modules/chat/chat.module';
 import { DatabaseModule } from './database/database.module';
 import { appConfig, authConfig, databaseConfig } from './config';
 
@@ -26,7 +27,8 @@ import { appConfig, authConfig, databaseConfig } from './config';
     MasterModule,
     InquiriesModule,
     ReviewsModule,
-    ViewHistoryModule
+    ViewHistoryModule,
+    ChatModule
   ],
   controllers: [AppController],
   providers: [AppService]

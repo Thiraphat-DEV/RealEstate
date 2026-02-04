@@ -3,6 +3,7 @@ import { AuthProvider } from './features/auth/context/AuthContext'
 import { HomePage, AuthCallbackPage, SignupPage, FavouritePage, ViewHistoryPage, PropertyDetailPage } from './pages'
 import LoginPage from './pages/LoginPage'
 import { ErrorBoundary } from './components/ErrorBoundary'
+import { ChatAgent } from './components/chatAgent'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
+          {/* <ChatAgent className="md:right-72" /> */}
         </BrowserRouter>
       </AuthProvider>
     </ErrorBoundary>

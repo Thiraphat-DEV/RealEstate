@@ -4,10 +4,12 @@ import { PropertiesService } from './properties.service';
 import { MasterPropertiesEntity } from 'src/modules/schema/master/ms_properties.entity';
 import { Types } from 'mongoose';
 import { GetPropertiesFilterDTO } from '../dto';
+import { PropertyReviewEntity } from 'src/modules/schema/systems/property-review.entity';
 
 describe('PropertiesService', () => {
   let service: PropertiesService;
   let masterPropertiesModel: jest.Mocked<any>;
+  let reviewModel: jest.Mocked<any>;
 
   // Test constants
   const DEFAULT_PAGE = 1;
@@ -28,6 +30,7 @@ describe('PropertiesService', () => {
     address: new Types.ObjectId(),
     createdAt: new Date(),
     updatedAt: new Date(),
+    rating: [4, 5],
     ...overrides
   });
 
@@ -37,6 +40,11 @@ describe('PropertiesService', () => {
     propertyType: property.propertyType.toString(),
     status: property.status.toString(),
     address: property.address.toString()
+  });
+
+  const createMockReviewResult = (property: any) => ({
+    _id: new Types.ObjectId(),
+    propertyId: property._id
   });
 
   beforeEach(async () => {
@@ -50,6 +58,10 @@ describe('PropertiesService', () => {
         {
           provide: getModelToken(MasterPropertiesEntity.name),
           useValue: mockMasterPropertiesModel
+        },
+        {
+          provide: getModelToken(PropertyReviewEntity.name),
+          useValue: mockMasterPropertiesModel
         }
       ]
     }).compile();
@@ -58,6 +70,9 @@ describe('PropertiesService', () => {
     masterPropertiesModel = module.get(
       getModelToken(MasterPropertiesEntity.name)
     );
+    reviewModel = module.get(
+      getModelToken(PropertyReviewEntity.name)
+    )
   });
 
   afterEach(() => {
@@ -549,6 +564,93 @@ describe('PropertiesService', () => {
 
         // Assert
         expect(result.statusCode).toBe(500);
+      });
+    });
+  });
+
+  describe('getPropertiesByRating', () => {
+    describe('Success Cases', () => {
+      it('should return properties by rating', async () => {
+        const mockProperties = [
+          createMockProperty({ _id: new Types.ObjectId() }),
+          createMockProperty({ _id: new Types.ObjectId()})
+        ];
+        const mockCountResult = [{ total: 59 }];
+
+        const queryCheck: GetPropertiesFilterDTO = {
+          page: 1,
+          pageLimit: 20,
+          rating: [4, 5]
+        };
+
+        const defaultMetaDataResult = {
+          total: 2,
+          page: 1,
+          pageLimit: 20,
+          totalPages: Math.ceil(2 / 20) || 1
+        };
+
+        const mockDataResult = mockProperties.map(createMockPropertyResult);
+
+        reviewModel.aggregate
+          .mockReturnValue({
+            exec: jest.fn().mockResolvedValue(mockCountResult)
+          })
+          .mockReturnValue({
+            exec: jest.fn().mockResolvedValue(mockDataResult)
+          });
+
+        const resultCheck = await service.getAllProperties(queryCheck);
+
+        expect(resultCheck.statusCode).toBe(200);
+        expect(resultCheck.data?.length).toBeGreaterThan(0);
+      });
+    });
+
+    describe('Validation Cases', () => {
+      it('should return 406 when rating invalid', async () => {
+        const queryData: GetPropertiesFilterDTO = { rating: [0, -1, -2] };
+
+        const mockCountResult = [{ total: 0 }];
+        const mockDataResult: any[] = [];
+
+        reviewModel.aggregate
+          .mockReturnValue({
+            exec: jest.fn().mockResolvedValue(mockCountResult)
+          })
+          .mockReturnValue({
+            exec: jest.fn().mockResolvedValue(mockDataResult)
+          });
+
+
+      const result = await service.getAllProperties(queryData);
+
+      expect(result.statusCode).toBe(200);
+      expect(result.metadata.total).toBe(0);
+      expect(result.metadata.page).toBe(1);
+      });
+
+    });
+
+    describe('Error Cases', () => {
+      it('should error from database', async () => {
+        const queryData: GetPropertiesFilterDTO = { rating: [-1, -2, -3] };
+        const error = new Error('Database error');
+        const errorSpy = jest
+          .spyOn(console, 'error')
+          .mockImplementation(() => {});
+
+        reviewModel.aggregate.mockReturnValue({
+          exec: jest.fn().mockRejectedValue(error)
+        });
+
+        const result = await service.getAllProperties(queryData);
+
+        expect(result.statusCode).toBe(500);
+        expect(result.error).toBe(error);
+        expect(result.data).toBeNull();
+
+        errorSpy.mockRestore();
       });
     });
   });
